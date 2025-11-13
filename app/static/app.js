@@ -1,4 +1,6 @@
 const HEATMAPS_TO_DISPLAY = 1;
+const ZERO_CUTOFF_FACTOR = 1e-6;
+const MIN_ZERO_CUTOFF = 1e-9;
 const heatmapContainer = document.getElementById("heatmap-container");
 const template = document.getElementById("heatmap-template");
 const headSlider = document.getElementById("head-slider");
@@ -143,12 +145,26 @@ function buildColorbar(range, contrast) {
     };
 }
 
+function sanitizeValue(value, zeroCutoff) {
+    if (!Number.isFinite(value)) return 0;
+    if (value <= 0) return 0;
+    if (value <= zeroCutoff) return 0;
+    return value;
+}
+
+function sanitizeMatrix(matrix, zeroCutoff) {
+    return matrix.map((row) => row.map((value) => sanitizeValue(value, zeroCutoff)));
+}
+
 function transformMatrix(matrix, range, contrast) {
     const span = range.max - range.min;
     const safeSpan = span === 0 ? 1 : span;
     const safeContrast = Math.max(contrast, 0.01);
     return matrix.map((row) =>
         row.map((value) => {
+            if (value <= 0) {
+                return 0;
+            }
             const normalized = clamp01((value - range.min) / safeSpan);
             return Math.pow(normalized, safeContrast);
         })
@@ -207,14 +223,20 @@ function renderHeatmap(element, tokens, matrix, titleSuffix, zRange, contrast) {
 }
 
 function computeRange(matrixA, matrixB) {
-    let minVal = Number.POSITIVE_INFINITY;
-    let maxVal = Number.NEGATIVE_INFINITY;
+    let maxVal = 0;
 
     const update = (matrix) => {
         for (const row of matrix) {
             for (const value of row) {
-                if (value < minVal) minVal = value;
-                if (value > maxVal) maxVal = value;
+                if (!Number.isFinite(value)) {
+                    continue;
+                }
+                if (value <= 0) {
+                    continue;
+                }
+                if (value > maxVal) {
+                    maxVal = value;
+                }
             }
         }
     };
@@ -222,14 +244,13 @@ function computeRange(matrixA, matrixB) {
     update(matrixA);
     update(matrixB);
 
-    if (!Number.isFinite(minVal) || !Number.isFinite(maxVal)) {
-        minVal = 0;
-        maxVal = 1;
-    } else if (minVal === maxVal) {
-        maxVal = minVal + 1e-6;
-    }
+    const zeroCutoff = Math.max(maxVal * ZERO_CUTOFF_FACTOR, MIN_ZERO_CUTOFF);
 
-    return { min: minVal, max: maxVal };
+    return {
+        min: 0,
+        max: Number.isFinite(maxVal) && maxVal > 0 ? maxVal : 0,
+        zeroCutoff,
+    };
 }
 
 async function render() {
@@ -270,10 +291,18 @@ async function render() {
             panels.forEach((panel) => {
                 const heatmapElement = panel.querySelector(".heatmap");
                 const model = heatmapElement.dataset.model;
-                const matrix = model === "A" ? data.model_a : data.model_b;
+                const rawMatrix = model === "A" ? data.model_a : data.model_b;
+                const sanitizedMatrix = sanitizeMatrix(rawMatrix, range.zeroCutoff);
                 const tokens = tokensByModel[model];
                 const titleSuffix = `Head ${head}`;
-                renderHeatmap(heatmapElement, tokens, matrix, titleSuffix, range, contrast);
+                renderHeatmap(
+                    heatmapElement,
+                    tokens,
+                    sanitizedMatrix,
+                    titleSuffix,
+                    range,
+                    contrast,
+                );
             });
         } catch (error) {
             panels.forEach((panel) => {
