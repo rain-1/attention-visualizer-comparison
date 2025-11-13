@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attention Heatmap Comparison</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Attention Heatmap Comparison</h1>
+        <p id="prompt-text"></p>
+    </header>
+
+    <section class="controls">
+        <div class="control">
+            <label for="head-slider">Head</label>
+            <input type="range" id="head-slider" min="0" max="0" value="0" />
+            <span id="head-value">0</span>
+        </div>
+        <div class="control">
+            <label for="layer-slider">Layer Start</label>
+            <input type="range" id="layer-slider" min="0" max="0" value="0" />
+            <span id="layer-value">0</span>
+        </div>
+    </section>
+
+    <section id="heatmap-container"></section>
+
+    <template id="heatmap-template">
+        <div class="layer-group">
+            <div class="layer-header">
+                <h2>Layer <span class="layer-index"></span></h2>
+            </div>
+            <div class="heatmaps">
+                <div class="heatmap-panel">
+                    <h3>Model A</h3>
+                    <div class="heatmap" data-model="A"></div>
+                </div>
+                <div class="heatmap-panel">
+                    <h3>Model B</h3>
+                    <div class="heatmap" data-model="B"></div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="app.js" type="module"></script>
+</body>
+</html>
