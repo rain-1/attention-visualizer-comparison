@@ -5,7 +5,7 @@ from __future__ import annotations
 import argparse
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Iterable, List, Sequence
+from typing import Dict, Iterable, List, Sequence
 
 import torch
 
@@ -145,6 +145,85 @@ def build_mappings(bundle_a: AttentionBundle, bundle_b: AttentionBundle) -> tupl
     return mapping_a, mapping_b, tokens
 
 
+def categorize_alignment(mapping_a: Sequence[Sequence[int]], mapping_b: Sequence[Sequence[int]]) -> List[str]:
+    categories = []
+    for group_a, group_b in zip(mapping_a, mapping_b):
+        len_a = len(group_a)
+        len_b = len(group_b)
+        if len_a > 1 and len_b > 1:
+            categories.append("squashed_in_both")
+        elif len_a > 1:
+            categories.append("squashed_in_a_only")
+        elif len_b > 1:
+            categories.append("squashed_in_b_only")
+        else:
+            categories.append("unsquashed")
+    return categories
+
+
+def analyze_squashed_columns(
+    attn_a: torch.Tensor,
+    attn_b: torch.Tensor,
+    mapping_a: Sequence[Sequence[int]],
+    mapping_b: Sequence[Sequence[int]],
+    tokens: Sequence[str],
+) -> List[str]:
+    column_mean_a = attn_a.mean(dim=(0, 1, 2))
+    column_mean_b = attn_b.mean(dim=(0, 1, 2))
+    column_abs_diff = (column_mean_a - column_mean_b).abs()
+
+    categories = categorize_alignment(mapping_a, mapping_b)
+    stats: Dict[str, Dict[str, float]] = {}
+    total_abs_diff = float(column_abs_diff.sum().item())
+
+    for idx, category in enumerate(categories):
+        bucket = stats.setdefault(
+            category,
+            {"count": 0.0, "mean_a": 0.0, "mean_b": 0.0, "abs_diff": 0.0},
+        )
+        bucket["count"] += 1.0
+        bucket["mean_a"] += float(column_mean_a[idx].item())
+        bucket["mean_b"] += float(column_mean_b[idx].item())
+        bucket["abs_diff"] += float(column_abs_diff[idx].item())
+
+    lines = ["Column-level analysis (mean attention across layers/heads/queries):"]
+    for category in (
+        "squashed_in_a_only",
+        "squashed_in_b_only",
+        "squashed_in_both",
+        "unsquashed",
+    ):
+        data = stats.get(category)
+        if not data or data["count"] == 0:
+            continue
+        count = int(data["count"])
+        mean_a = data["mean_a"] / data["count"]
+        mean_b = data["mean_b"] / data["count"]
+        abs_diff = data["abs_diff"]
+        share = (abs_diff / total_abs_diff * 100.0) if total_abs_diff > 0 else 0.0
+        lines.append(
+            "- {category} (count={count}): mean_A={mean_a:.6f}, "
+            "mean_B={mean_b:.6f}, |Δ|={abs_diff:.6f} ({share:.2f}% of total)".format(
+                category=category,
+                count=count,
+                mean_a=mean_a,
+                mean_b=mean_b,
+                abs_diff=abs_diff,
+                share=share,
+            )
+        )
+
+    if total_abs_diff == 0:
+        lines.append("- No column-wise differences detected (total absolute difference is zero).")
+
+    lines.append("")
+    lines.append("Token categories:")
+    for token, category in zip(tokens, categories):
+        lines.append(f"  {token}: {category}")
+
+    return lines
+
+
 def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("model_a", type=Path, help="Path to the first attention bundle (.pt file)")
@@ -171,6 +250,10 @@ def main(argv: Iterable[str] | None = None) -> None:
     print(f"Aligned token sequence length: {len(tokens)}")
     print("Tokens:")
     print(" ".join(tokens))
+
+    print()
+    for line in analyze_squashed_columns(attn_a, attn_b, mapping_a, mapping_b, tokens):
+        print(line)
 
 
 if __name__ == "__main__":
