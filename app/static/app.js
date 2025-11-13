@@ -1,4 +1,4 @@
-const HEATMAPS_TO_DISPLAY = 8;
+const HEATMAPS_TO_DISPLAY = 1;
 const heatmapContainer = document.getElementById("heatmap-container");
 const template = document.getElementById("heatmap-template");
 const headSlider = document.getElementById("head-slider");
@@ -10,12 +10,12 @@ const promptText = document.getElementById("prompt-text");
 let metadata = null;
 const attentionCache = new Map();
 
-function clampLayerStart(value) {
+function clampLayer(value) {
     if (!metadata) return 0;
     const numericValue = Number(value);
     const safeValue = Number.isNaN(numericValue) ? 0 : numericValue;
-    const maxStart = Math.max(0, metadata.num_layers - HEATMAPS_TO_DISPLAY);
-    return Math.min(Math.max(0, safeValue), maxStart);
+    const maxLayer = Math.max(0, metadata.num_layers - 1);
+    return Math.min(Math.max(0, safeValue), maxLayer);
 }
 
 async function fetchMetadata() {
@@ -41,6 +41,10 @@ async function fetchAttention(layer, head) {
 }
 
 function ensureHeatmapRows() {
+    while (heatmapContainer.children.length > HEATMAPS_TO_DISPLAY) {
+        heatmapContainer.removeChild(heatmapContainer.lastElementChild);
+    }
+
     const existing = heatmapContainer.children.length;
     for (let i = existing; i < HEATMAPS_TO_DISPLAY; i += 1) {
         const clone = template.content.cloneNode(true);
@@ -51,11 +55,13 @@ function ensureHeatmapRows() {
 function updateControls() {
     headSlider.max = metadata.num_heads - 1;
     headSlider.value = Math.min(headSlider.value, metadata.num_heads - 1);
+    headSlider.step = 1;
     headValue.textContent = headSlider.value;
 
-    const maxLayerStart = Math.max(0, metadata.num_layers - HEATMAPS_TO_DISPLAY);
-    layerSlider.max = maxLayerStart;
-    layerSlider.value = clampLayerStart(layerSlider.value);
+    const maxLayer = Math.max(0, metadata.num_layers - 1);
+    layerSlider.max = maxLayer;
+    layerSlider.value = clampLayer(layerSlider.value);
+    layerSlider.step = 1;
     layerValue.textContent = layerSlider.value;
 
     if (metadata.prompt) {
@@ -66,6 +72,8 @@ function updateControls() {
 }
 
 function renderHeatmap(element, tokens, matrix, titleSuffix, zRange) {
+    const size = element.clientWidth || element.clientHeight || 600;
+
     const layout = {
         margin: { t: 30, l: 150, r: 10, b: 120 },
         xaxis: {
@@ -74,15 +82,18 @@ function renderHeatmap(element, tokens, matrix, titleSuffix, zRange) {
             ticktext: tokens,
             tickangle: -45,
             automargin: true,
+            constrain: "domain",
         },
         yaxis: {
             tickmode: "array",
             tickvals: tokens.map((_, idx) => idx),
             ticktext: tokens,
             automargin: true,
+            scaleanchor: "x",
+            scaleratio: 1,
         },
         title: { text: titleSuffix, font: { size: 14 } },
-        height: element.clientHeight,
+        height: size,
     };
 
     const trace = {
@@ -125,9 +136,9 @@ function computeRange(matrixA, matrixB) {
 
 async function render() {
     const head = Number(headSlider.value);
-    const startLayer = clampLayerStart(Number(layerSlider.value));
-    layerSlider.value = startLayer;
-    layerValue.textContent = startLayer;
+    const layer = clampLayer(Number(layerSlider.value));
+    layerSlider.value = layer;
+    layerValue.textContent = layer;
     headValue.textContent = head;
 
     ensureHeatmapRows();
@@ -136,7 +147,7 @@ async function render() {
     const tokens = metadata.tokens;
 
     for (let i = 0; i < rows.length; i += 1) {
-        const layerIndex = startLayer + i;
+        const layerIndex = layer + i;
         const rowElement = rows[i];
         const headerSpan = rowElement.querySelector(".layer-index");
         const panels = rowElement.querySelectorAll(".heatmap-panel");
