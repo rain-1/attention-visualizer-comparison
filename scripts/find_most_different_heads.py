@@ -104,7 +104,43 @@ def compute_difference_scores(attn_a: torch.Tensor, attn_b: torch.Tensor) -> tor
     return (attn_a - attn_b).abs().mean(dim=(-1, -2))
 
 
-def format_top_differences(scores: torch.Tensor, top_k: int) -> List[str]:
+def describe_mismatched_column_bias(
+    layer_attn_a: torch.Tensor,
+    layer_attn_b: torch.Tensor,
+    mapping_a: Sequence[Sequence[int]],
+    mapping_b: Sequence[Sequence[int]],
+) -> str:
+    mismatched_indices = [
+        idx
+        for idx, (group_a, group_b) in enumerate(zip(mapping_a, mapping_b))
+        if len(group_a) > 1 or len(group_b) > 1
+    ]
+
+    if not mismatched_indices:
+        return "difference comes from elsewhere"
+
+    col_mean_a = layer_attn_a.mean(dim=0)
+    col_mean_b = layer_attn_b.mean(dim=0)
+
+    diff = col_mean_a[mismatched_indices] - col_mean_b[mismatched_indices]
+    mean_diff = float(diff.mean().item())
+
+    tolerance = 1e-5
+    if abs(mean_diff) <= tolerance:
+        return "the columns are similar"
+    if mean_diff > 0:
+        return "the column in A is hotter"
+    return "the column in B is hotter"
+
+
+def format_top_differences(
+    scores: torch.Tensor,
+    attn_a: torch.Tensor,
+    attn_b: torch.Tensor,
+    mapping_a: Sequence[Sequence[int]],
+    mapping_b: Sequence[Sequence[int]],
+    top_k: int,
+) -> List[str]:
     layer_count, head_count = scores.shape
     flat_scores = scores.view(-1)
     values, indices = torch.topk(flat_scores, k=min(top_k, flat_scores.numel()))
@@ -112,7 +148,12 @@ def format_top_differences(scores: torch.Tensor, top_k: int) -> List[str]:
     for rank, (value, flat_index) in enumerate(zip(values.tolist(), indices.tolist()), start=1):
         layer = flat_index // head_count
         head = flat_index % head_count
-        lines.append(f"{rank:2d}. Layer {layer:02d}, Head {head:02d}: {value:.6f}")
+        descriptor = describe_mismatched_column_bias(
+            attn_a[layer, head], attn_b[layer, head], mapping_a, mapping_b
+        )
+        lines.append(
+            f"{rank:2d}. Layer {layer:02d}, Head {head:02d}: {value:.6f}, {descriptor}"
+        )
     return lines
 
 
@@ -243,7 +284,9 @@ def main(argv: Iterable[str] | None = None) -> None:
     attn_b = compress_attention(bundle_b.attention, mapping_b)
 
     scores = compute_difference_scores(attn_a, attn_b)
-    for line in format_top_differences(scores, args.top_k):
+    for line in format_top_differences(
+        scores, attn_a, attn_b, mapping_a, mapping_b, args.top_k
+    ):
         print(line)
 
     print()
