@@ -1,0 +1,177 @@
+"""Utility for ranking attention heads by difference between two models."""
+
+from __future__ import annotations
+
+import argparse
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Iterable, List, Sequence
+
+import torch
+
+
+@dataclass
+class AttentionBundle:
+    tokens: List[str]
+    attention: torch.Tensor
+
+
+def load_bundle(path: Path) -> AttentionBundle:
+    payload = torch.load(path, map_location="cpu")
+    if "attention" not in payload:
+        raise KeyError(f"Attention tensor missing in {path}")
+    attention = payload["attention"].float()
+    if attention.ndim != 4:
+        raise ValueError("Attention tensor must have shape [layers, heads, tokens, tokens]")
+    tokens = list(payload.get("tokens") or [str(i) for i in range(attention.shape[-1])])
+    return AttentionBundle(tokens=tokens, attention=attention)
+
+
+def build_identity_mapping(length: int) -> List[List[int]]:
+    return [[idx] for idx in range(length)]
+
+
+def build_alignment(source_tokens: Sequence[str], target_tokens: Sequence[str]) -> List[List[int]]:
+    """Group source token indices so that they align with target tokens.
+
+    The algorithm keeps tokens that appear in both sequences aligned and assigns
+    unmatched source tokens to the nearest target token that follows them (or the
+    previous one if no such token exists).
+    """
+
+    from difflib import SequenceMatcher
+
+    matcher = SequenceMatcher(a=source_tokens, b=target_tokens, autojunk=False)
+    mapping: List[List[int]] = [[] for _ in range(len(target_tokens))]
+
+    source_pos = 0
+    for block in matcher.get_matching_blocks():
+        unmatched_end = block.a
+        target_insert_pos = block.b
+        while source_pos < unmatched_end:
+            if target_insert_pos < len(mapping):
+                mapping[target_insert_pos].append(source_pos)
+            elif target_insert_pos > 0:
+                mapping[target_insert_pos - 1].append(source_pos)
+            else:
+                raise ValueError("Unable to align source tokens with target tokens")
+            source_pos += 1
+
+        for offset in range(block.size):
+            target_idx = block.b + offset
+            source_idx = block.a + offset
+            mapping[target_idx].append(source_idx)
+        source_pos = block.a + block.size
+
+    all_assigned = sorted(index for group in mapping for index in group)
+    expected = list(range(len(source_tokens)))
+    if all_assigned != expected:
+        raise ValueError("Alignment failed to cover every source token")
+
+    return mapping
+
+
+def compress_attention(attention: torch.Tensor, mapping: Sequence[Sequence[int]]) -> torch.Tensor:
+    """Average rows/columns of ``attention`` according to ``mapping``."""
+
+    if attention.shape[-1] != attention.shape[-2]:
+        raise ValueError("Attention tensor must have square token dimensions")
+
+    src_len = attention.shape[-1]
+    covered = sorted(index for group in mapping for index in group)
+    if covered != list(range(src_len)):
+        raise ValueError("Mapping must cover every source token index exactly once")
+
+    target_len = len(mapping)
+    device = attention.device
+    dtype = attention.dtype
+    aggregated = torch.empty((*attention.shape[:2], target_len, target_len), dtype=dtype, device=device)
+
+    index_tensors = [torch.tensor(indices, dtype=torch.long, device=device) for indices in mapping]
+
+    for row_idx, row_indices in enumerate(index_tensors):
+        row_selected = attention.index_select(2, row_indices)
+        for col_idx, col_indices in enumerate(index_tensors):
+            sub_tensor = row_selected.index_select(3, col_indices)
+            aggregated[:, :, row_idx, col_idx] = sub_tensor.mean(dim=(2, 3))
+
+    return aggregated
+
+
+def compute_difference_scores(attn_a: torch.Tensor, attn_b: torch.Tensor) -> torch.Tensor:
+    if attn_a.shape != attn_b.shape:
+        raise ValueError("Attention tensors must share the same shape for comparison")
+    return (attn_a - attn_b).abs().mean(dim=(-1, -2))
+
+
+def format_top_differences(scores: torch.Tensor, top_k: int) -> List[str]:
+    layer_count, head_count = scores.shape
+    flat_scores = scores.view(-1)
+    values, indices = torch.topk(flat_scores, k=min(top_k, flat_scores.numel()))
+    lines = ["Top differing layer/head pairs (by mean absolute difference):"]
+    for rank, (value, flat_index) in enumerate(zip(values.tolist(), indices.tolist()), start=1):
+        layer = flat_index // head_count
+        head = flat_index % head_count
+        lines.append(f"{rank:2d}. Layer {layer:02d}, Head {head:02d}: {value:.6f}")
+    return lines
+
+
+def ensure_mapping(mapping: Sequence[Sequence[int]], source_length: int) -> None:
+    flattened = [idx for group in mapping for idx in group]
+    if sorted(flattened) != list(range(source_length)):
+        raise ValueError("Mapping must cover every source index exactly once")
+
+
+def build_mappings(bundle_a: AttentionBundle, bundle_b: AttentionBundle) -> tuple[List[List[int]], List[List[int]], List[str]]:
+    len_a = len(bundle_a.tokens)
+    len_b = len(bundle_b.tokens)
+
+    if len_a == len_b:
+        tokens = bundle_a.tokens
+        mapping_a = build_identity_mapping(len_a)
+        mapping_b = build_identity_mapping(len_b)
+    elif len_a < len_b:
+        tokens = bundle_a.tokens
+        mapping_a = build_identity_mapping(len_a)
+        mapping_b = build_alignment(bundle_b.tokens, tokens)
+    else:
+        tokens = bundle_b.tokens
+        mapping_a = build_alignment(bundle_a.tokens, tokens)
+        mapping_b = build_identity_mapping(len_b)
+
+    ensure_mapping(mapping_a, len(bundle_a.tokens))
+    ensure_mapping(mapping_b, len(bundle_b.tokens))
+
+    return mapping_a, mapping_b, tokens
+
+
+def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("model_a", type=Path, help="Path to the first attention bundle (.pt file)")
+    parser.add_argument("model_b", type=Path, help="Path to the second attention bundle (.pt file)")
+    parser.add_argument("--top-k", type=int, default=20, help="Number of layer/head pairs to display")
+    return parser.parse_args(argv)
+
+
+def main(argv: Iterable[str] | None = None) -> None:
+    args = parse_args(argv)
+    bundle_a = load_bundle(args.model_a)
+    bundle_b = load_bundle(args.model_b)
+
+    mapping_a, mapping_b, tokens = build_mappings(bundle_a, bundle_b)
+
+    attn_a = compress_attention(bundle_a.attention, mapping_a)
+    attn_b = compress_attention(bundle_b.attention, mapping_b)
+
+    scores = compute_difference_scores(attn_a, attn_b)
+    for line in format_top_differences(scores, args.top_k):
+        print(line)
+
+    print()
+    print(f"Aligned token sequence length: {len(tokens)}")
+    print("Tokens:")
+    print(" ".join(tokens))
+
+
+if __name__ == "__main__":
+    main()
