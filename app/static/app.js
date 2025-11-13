@@ -83,6 +83,7 @@ function renderHeatmap(element, tokens, matrix, titleSuffix, zRange) {
             tickangle: -45,
             automargin: true,
             constrain: "domain",
+            autorange: "reversed",
         },
         yaxis: {
             tickmode: "array",
@@ -91,6 +92,7 @@ function renderHeatmap(element, tokens, matrix, titleSuffix, zRange) {
             automargin: true,
             scaleanchor: "x",
             scaleratio: 1,
+            autorange: "reversed",
         },
         title: { text: titleSuffix, font: { size: 14 } },
         height: size,
