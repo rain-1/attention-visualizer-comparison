@@ -30,12 +30,13 @@ This project provides a small Flask application for comparing attention maps sto
    python -m app.server
    ```
 
-4. Open your browser to `http://localhost:8000` to explore the attention comparison view. Use the head slider to select which attention head to inspect and the layer slider to page through layers eight at a time.
+4. Open your browser to `http://localhost:8000` to explore the attention comparison view. Use the head slider to select which attention head to inspect, the layer slider to page through layers, and the contrast slider to tune the color curve when you need to amplify subtle differences.
 
 ## Development notes
 
 - Heatmaps are rendered with Plotly to provide responsive SVG/Canvas output that works well for long token lists.
 - Data from the models is cached in memory for quick navigation between layers and heads.
+- Each pair of heatmaps shares a unified color scale derived from both models so comparisons remain consistent even when the prompts have different lengths.
 
 ## Sample data
 

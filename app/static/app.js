@@ -6,6 +6,8 @@ const headValue = document.getElementById("head-value");
 const layerSlider = document.getElementById("layer-slider");
 const layerValue = document.getElementById("layer-value");
 const promptText = document.getElementById("prompt-text");
+const contrastSlider = document.getElementById("contrast-slider");
+const contrastValue = document.getElementById("contrast-value");
 
 let metadata = null;
 const attentionCache = new Map();
@@ -74,6 +76,9 @@ function updateControls() {
     layerSlider.step = 1;
     layerValue.textContent = layerSlider.value;
 
+    const contrast = Number.parseFloat(contrastSlider.value) || 1;
+    contrastValue.textContent = `${contrast.toFixed(1)}×`;
+
     if (metadata.models) {
         const promptLines = [];
         const modelEntries = [
@@ -98,7 +103,59 @@ function buildAxisLabels(tokens, matrixSize) {
     return Array.from({ length: matrixSize }, (_, idx) => idx.toString());
 }
 
-function renderHeatmap(element, tokens, matrix, titleSuffix, zRange) {
+function clamp01(value) {
+    if (!Number.isFinite(value)) return 0;
+    if (value < 0) return 0;
+    if (value > 1) return 1;
+    return value;
+}
+
+function formatAttentionValue(value) {
+    if (!Number.isFinite(value)) return "0";
+    const abs = Math.abs(value);
+    if (abs === 0) {
+        return "0";
+    }
+    if (abs >= 1) {
+        return value.toFixed(2);
+    }
+    if (abs >= 0.01) {
+        return value.toFixed(3);
+    }
+    return value.toExponential(2);
+}
+
+function buildColorbar(range, contrast) {
+    const tickPositions = [0, 0.25, 0.5, 0.75, 1];
+    const span = range.max - range.min;
+    const safeContrast = Math.max(contrast, 0.01);
+    const inverseContrast = 1 / safeContrast;
+    const tickTexts = tickPositions.map((position) => {
+        const normalized = Math.pow(position, inverseContrast);
+        const actualValue = normalized * span + range.min;
+        return formatAttentionValue(actualValue);
+    });
+    return {
+        title: "Attention",
+        tickmode: "array",
+        tickvals: tickPositions,
+        ticktext: tickTexts,
+    };
+}
+
+function transformMatrix(matrix, range, contrast) {
+    const span = range.max - range.min;
+    const safeSpan = span === 0 ? 1 : span;
+    const safeContrast = Math.max(contrast, 0.01);
+    return matrix.map((row) =>
+        row.map((value) => {
+            const normalized = clamp01((value - range.min) / safeSpan);
+            return Math.pow(normalized, safeContrast);
+        })
+    );
+}
+
+function renderHeatmap(element, tokens, matrix, titleSuffix, zRange, contrast) {
     const size = element.clientWidth || element.clientHeight || 600;
 
     const rowCount = Array.isArray(matrix) ? matrix.length : 0;
@@ -131,13 +188,19 @@ function renderHeatmap(element, tokens, matrix, titleSuffix, zRange) {
         height: size,
     };
 
+    const transformedMatrix = transformMatrix(matrix, zRange, contrast);
+
     const trace = {
-        z: matrix,
+        z: transformedMatrix,
+        x: xAxisLabels,
+        y: yAxisLabels,
         type: "heatmap",
         colorscale: "Viridis",
-        colorbar: { title: "Attention" },
-        zmin: zRange.min,
-        zmax: zRange.max,
+        colorbar: buildColorbar(zRange, contrast),
+        zmin: 0,
+        zmax: 1,
+        customdata: matrix,
+        hovertemplate: "Target: %{y}<br>Source: %{x}<br>Attention: %{customdata:.4f}<extra></extra>",
     };
 
     Plotly.react(element, [trace], layout, { displaylogo: false, responsive: true });
@@ -172,9 +235,11 @@ function computeRange(matrixA, matrixB) {
 async function render() {
     const head = Number(headSlider.value);
     const layer = clampLayer(Number(layerSlider.value));
+    const contrast = Number.parseFloat(contrastSlider.value) || 1;
     layerSlider.value = layer;
     layerValue.textContent = layer;
     headValue.textContent = head;
+    contrastValue.textContent = `${contrast.toFixed(1)}×`;
 
     ensureHeatmapRows();
 
@@ -208,7 +273,7 @@ async function render() {
                 const matrix = model === "A" ? data.model_a : data.model_b;
                 const tokens = tokensByModel[model];
                 const titleSuffix = `Head ${head}`;
-                renderHeatmap(heatmapElement, tokens, matrix, titleSuffix, range);
+                renderHeatmap(heatmapElement, tokens, matrix, titleSuffix, range, contrast);
             });
         } catch (error) {
             panels.forEach((panel) => {
@@ -234,6 +299,10 @@ headSlider.addEventListener("input", () => {
 });
 
 layerSlider.addEventListener("input", () => {
+    render();
+});
+
+contrastSlider.addEventListener("input", () => {
     render();
 });
 

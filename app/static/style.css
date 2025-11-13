@@ -59,6 +59,7 @@ header p {
     font-size: 0.95rem;
     color: #52606d;
     text-align: center;
+    font-variant-numeric: tabular-nums;
 }
 
 #heatmap-container {
