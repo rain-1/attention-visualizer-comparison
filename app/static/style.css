@@ -1,12 +1,13 @@
 :root {
     font-family: "Inter", system-ui, sans-serif;
-    color: #1f2933;
-    background-color: #f8fafc;
+    color: #e2e8f0;
+    background-color: #0b1220;
 }
 
 body {
     margin: 0;
     padding: 0 2rem 4rem;
+    background: radial-gradient(circle at top, rgba(30, 41, 59, 0.6), transparent 60%), #0b1220;
 }
 
 header {
@@ -17,12 +18,13 @@ header {
 header h1 {
     margin: 0;
     font-size: 2rem;
+    color: #f8fafc;
 }
 
 header p {
     margin: 0.5rem auto 0;
     max-width: 60rem;
-    color: #4d5766;
+    color: #cbd5f5;
 }
 
 .controls {
@@ -32,10 +34,11 @@ header p {
     justify-content: center;
     margin: 1.5rem auto 2rem;
     max-width: 60rem;
-    background: white;
+    background: rgba(30, 41, 59, 0.85);
     border-radius: 12px;
     padding: 1rem 1.5rem;
-    box-shadow: 0 6px 20px rgba(31, 41, 55, 0.1);
+    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(6px);
 }
 
 .control {
@@ -43,6 +46,7 @@ header p {
     flex-direction: column;
     align-items: stretch;
     min-width: 12rem;
+    color: #e2e8f0;
 }
 
 .control label {
@@ -52,12 +56,13 @@ header p {
 
 .control input[type="range"] {
     width: 100%;
+    accent-color: #38bdf8;
 }
 
 .control span {
     margin-top: 0.35rem;
     font-size: 0.95rem;
-    color: #52606d;
+    color: #94a3b8;
     text-align: center;
     font-variant-numeric: tabular-nums;
 }
@@ -71,21 +76,25 @@ header p {
 }
 
 .layer-group {
-    background: white;
+    background: rgba(15, 23, 42, 0.85);
     border-radius: 16px;
     padding: 1rem 1.5rem 1.5rem;
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+    box-shadow: 0 18px 40px rgba(2, 6, 23, 0.65);
 }
 
 .error {
-    color: #b91c1c;
+    color: #f87171;
     text-align: center;
     padding: 1.5rem;
 }
 
 .layer-header h2 {
     margin: 0;
-    color: #1f2937;
+    color: #f1f5f9;
+}
+
+.layer-header p {
+    color: #94a3b8;
 }
 
 .heatmaps {
@@ -97,7 +106,7 @@ header p {
 
 .heatmap-panel h3 {
     margin: 0 0 0.5rem;
-    color: #334155;
+    color: #cbd5f5;
 }
 
 .heatmap {
@@ -105,6 +114,8 @@ header p {
     aspect-ratio: 1 / 1;
     min-height: 520px;
     max-height: 720px;
+    background: #0f172a;
+    border-radius: 12px;
 }
 
 @media (max-width: 900px) {
