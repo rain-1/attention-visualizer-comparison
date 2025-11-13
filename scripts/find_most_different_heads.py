@@ -104,20 +104,61 @@ def compute_difference_scores(attn_a: torch.Tensor, attn_b: torch.Tensor) -> tor
     return (attn_a - attn_b).abs().mean(dim=(-1, -2))
 
 
+def _canonicalize_token(token: str) -> str:
+    """Normalize ``token`` to make it easier to match the word "flowers"."""
+
+    # Common tokenizers (GPT-2, sentencepiece, tiktoken) prefix word-start tokens with
+    # characters such as ``Ġ`` or ``▁``.  We strip them before matching.
+    stripped = token.strip()
+    for prefix in ("Ġ", "▁", "Ċ"):
+        while stripped.startswith(prefix):
+            stripped = stripped[len(prefix) :]
+
+    # Remove typical BPE/wordpiece suffix markers.
+    for suffix in ("</w>", "▁", "Ġ"):
+        if stripped.endswith(suffix):
+            stripped = stripped[: -len(suffix)]
+
+    # Trim surrounding punctuation so tokens like "flowers," still match.
+    stripped = stripped.strip("'\".,!?;:-()").lower()
+    return stripped
+
+
+def _find_flowers_token_index(tokens: Sequence[str]) -> int | None:
+    """Return the index of the token (or first sub-token) for "flowers" if present."""
+
+    canonical = [_canonicalize_token(token) for token in tokens]
+
+    # First look for an exact token match.
+    for idx, token in enumerate(canonical):
+        if token in {"flowers", "flower"}:
+            return idx
+
+    # Fall back to detecting multi-token splits that concatenate to ``flowers``.
+    target = "flowers"
+    for start in range(len(tokens)):
+        combined = ""
+        for end in range(start, min(len(tokens), start + len(target))):
+            part = canonical[end]
+            if not part:
+                break
+            combined += part
+            if combined == target:
+                return start
+            if not target.startswith(combined):
+                break
+
+    return None
+
+
 def describe_flowers_column_bias(
     layer_attn_a: torch.Tensor, layer_attn_b: torch.Tensor, tokens: Sequence[str]
 ) -> str:
     """Determine which model focuses more on the "flowers" column."""
 
-    try:
-        flowers_index = next(idx for idx, token in enumerate(tokens) if token == "flowers")
-    except StopIteration:
-        try:
-            flowers_index = next(
-                idx for idx, token in enumerate(tokens) if token.lower() == "flowers"
-            )
-        except StopIteration:
-            return "flowers column unavailable"
+    flowers_index = _find_flowers_token_index(tokens)
+    if flowers_index is None:
+        return "flowers column unavailable"
 
     col_mean_a = layer_attn_a[:, flowers_index].mean()
     col_mean_b = layer_attn_b[:, flowers_index].mean()
