@@ -43,11 +43,10 @@ class AttentionBundle:
 def load_models() -> Dict[str, AttentionBundle]:
     model_a = AttentionBundle(DEFAULT_MODEL_A)
     model_b = AttentionBundle(DEFAULT_MODEL_B)
-    if model_a.tokens != model_b.tokens:
-        # Ensure both visualizations share the same vocabulary order
-        raise ValueError("Token lists differ between the two models")
-    if model_a.attention.shape != model_b.attention.shape:
-        raise ValueError("Attention tensors must have the same shape")
+    if model_a.num_layers != model_b.num_layers:
+        raise ValueError("Attention bundles must share the same number of layers")
+    if model_a.num_heads != model_b.num_heads:
+        raise ValueError("Attention bundles must share the same number of heads")
     return {"A": model_a, "B": model_b}
 
 
@@ -59,12 +58,21 @@ def index():
 @app.route("/api/metadata")
 def metadata():
     models = load_models()
-    sample = models["A"]
+    model_a = models["A"]
+    model_b = models["B"]
     return jsonify({
-        "tokens": sample.tokens,
-        "prompt": sample.prompt,
-        "num_layers": sample.num_layers,
-        "num_heads": sample.num_heads,
+        "num_layers": model_a.num_layers,
+        "num_heads": model_a.num_heads,
+        "models": {
+            "A": {
+                "tokens": model_a.tokens,
+                "prompt": model_a.prompt,
+            },
+            "B": {
+                "tokens": model_b.tokens,
+                "prompt": model_b.prompt,
+            },
+        },
     })
 
 

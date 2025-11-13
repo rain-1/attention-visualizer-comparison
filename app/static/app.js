@@ -10,6 +10,16 @@ const promptText = document.getElementById("prompt-text");
 let metadata = null;
 const attentionCache = new Map();
 
+function escapeHtml(str) {
+    if (typeof str !== "string") return "";
+    return str
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+}
+
 function clampLayer(value) {
     if (!metadata) return 0;
     const numericValue = Number(value);
@@ -64,22 +74,46 @@ function updateControls() {
     layerSlider.step = 1;
     layerValue.textContent = layerSlider.value;
 
-    if (metadata.prompt) {
-        promptText.textContent = `Prompt: ${metadata.prompt}`;
+    if (metadata.models) {
+        const promptLines = [];
+        const modelEntries = [
+            ["A", metadata.models.A],
+            ["B", metadata.models.B],
+        ];
+        for (const [label, model] of modelEntries) {
+            if (model && model.prompt) {
+                promptLines.push(`<strong>Model ${label} Prompt:</strong> ${escapeHtml(model.prompt)}`);
+            }
+        }
+        promptText.innerHTML = promptLines.join("<br />");
     } else {
         promptText.textContent = "";
     }
 }
 
+function buildAxisLabels(tokens, matrixSize) {
+    if (Array.isArray(tokens) && tokens.length === matrixSize) {
+        return tokens;
+    }
+    return Array.from({ length: matrixSize }, (_, idx) => idx.toString());
+}
+
 function renderHeatmap(element, tokens, matrix, titleSuffix, zRange) {
     const size = element.clientWidth || element.clientHeight || 600;
+
+    const rowCount = Array.isArray(matrix) ? matrix.length : 0;
+    const colCount = rowCount > 0 && Array.isArray(matrix[0]) ? matrix[0].length : rowCount;
+    const xAxisLabels = buildAxisLabels(tokens, colCount);
+    const yAxisLabels = buildAxisLabels(tokens, rowCount);
+    const xTickvals = xAxisLabels.map((_, idx) => idx);
+    const yTickvals = yAxisLabels.map((_, idx) => idx);
 
     const layout = {
         margin: { t: 30, l: 150, r: 10, b: 120 },
         xaxis: {
             tickmode: "array",
-            tickvals: tokens.map((_, idx) => idx),
-            ticktext: tokens,
+            tickvals: xTickvals,
+            ticktext: xAxisLabels,
             tickangle: -45,
             automargin: true,
             constrain: "domain",
@@ -87,8 +121,8 @@ function renderHeatmap(element, tokens, matrix, titleSuffix, zRange) {
         },
         yaxis: {
             tickmode: "array",
-            tickvals: tokens.map((_, idx) => idx),
-            ticktext: tokens,
+            tickvals: yTickvals,
+            ticktext: yAxisLabels,
             automargin: true,
             scaleanchor: "x",
             scaleratio: 1,
@@ -146,7 +180,10 @@ async function render() {
     ensureHeatmapRows();
 
     const rows = heatmapContainer.querySelectorAll(".layer-group");
-    const tokens = metadata.tokens;
+    const tokensByModel = {
+        A: metadata.models?.A?.tokens ?? null,
+        B: metadata.models?.B?.tokens ?? null,
+    };
 
     for (let i = 0; i < rows.length; i += 1) {
         const layerIndex = layer + i;
@@ -167,9 +204,10 @@ async function render() {
             const range = computeRange(data.model_a, data.model_b);
 
             panels.forEach((panel) => {
-                const model = panel.querySelector(".heatmap").dataset.model;
                 const heatmapElement = panel.querySelector(".heatmap");
+                const model = heatmapElement.dataset.model;
                 const matrix = model === "A" ? data.model_a : data.model_b;
+                const tokens = tokensByModel[model];
                 const titleSuffix = `Head ${head}`;
                 renderHeatmap(heatmapElement, tokens, matrix, titleSuffix, range);
             });
