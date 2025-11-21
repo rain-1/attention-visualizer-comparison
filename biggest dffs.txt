@@ -1,0 +1,70 @@
+ 1. Layer 47, Head 75: 0.015255
+ 2. Layer 45, Head 36: 0.013901
+ 3. Layer 47, Head 82: 0.013752
+ 4. Layer 52, Head 36: 0.011624
+ 5. Layer 48, Head 02: 0.011306
+ 6. Layer 65, Head 02: 0.011111
+ 7. Layer 45, Head 43: 0.010531
+ 8. Layer 60, Head 91: 0.010446
+ 9. Layer 54, Head 104: 0.010360
+10. Layer 68, Head 07: 0.010345
+11. Layer 79, Head 05: 0.009982
+12. Layer 38, Head 52: 0.009706
+13. Layer 125, Head 88: 0.009601
+14. Layer 48, Head 104: 0.009494
+15. Layer 63, Head 49: 0.009481
+16. Layer 49, Head 75: 0.009154
+17. Layer 59, Head 21: 0.009095
+18. Layer 64, Head 74: 0.009042
+19. Layer 46, Head 12: 0.008964
+20. Layer 109, Head 80: 0.008855
+
+
+ 1. Layer 47, Head 75: 0.015255, the flowers column in B is hotter
+ 2. Layer 45, Head 36: 0.013901, the flowers column in B is hotter
+ 3. Layer 47, Head 82: 0.013752, the flowers column in B is hotter
+ 4. Layer 52, Head 36: 0.011624, the flowers column in B is hotter
+ 5. Layer 48, Head 02: 0.011306, the flowers column in A is hotter
+ 6. Layer 65, Head 02: 0.011111, the flowers column in A is hotter
+ 7. Layer 45, Head 43: 0.010531, the flowers column in B is hotter
+ 8. Layer 60, Head 91: 0.010446, the flowers column in B is hotter
+ 9. Layer 54, Head 104: 0.010360, the flowers column in A is hotter
+10. Layer 68, Head 07: 0.010345, the flowers column in A is hotter
+11. Layer 79, Head 05: 0.009982, the flowers column in A is hotter
+12. Layer 38, Head 52: 0.009706, the flowers column in B is hotter
+13. Layer 125, Head 88: 0.009601, the flowers column is similar
+14. Layer 48, Head 104: 0.009494, the flowers column in A is hotter
+15. Layer 63, Head 49: 0.009481, the flowers column in A is hotter
+16. Layer 49, Head 75: 0.009154, the flowers column in B is hotter
+17. Layer 59, Head 21: 0.009095, the flowers column in A is hotter
+18. Layer 64, Head 74: 0.009042, the flowers column in A is hotter
+19. Layer 46, Head 12: 0.008964, the flowers column in B is hotter
+20. Layer 109, Head 80: 0.008855, the flowers column is similar
+21. Layer 62, Head 57: 0.008837, the flowers column is similar
+22. Layer 47, Head 93: 0.008792, the flowers column in A is hotter
+23. Layer 107, Head 54: 0.008644, the flowers column is similar
+24. Layer 46, Head 23: 0.008620, the flowers column in A is hotter
+25. Layer 88, Head 57: 0.008574, the flowers column is similar
+26. Layer 47, Head 74: 0.008574, the flowers column in A is hotter
+27. Layer 117, Head 111: 0.008466, the flowers column is similar
+28. Layer 48, Head 106: 0.008399, the flowers column in A is hotter
+29. Layer 47, Head 86: 0.008359, the flowers column in A is hotter
+30. Layer 48, Head 05: 0.008355, the flowers column in A is hotter
+31. Layer 93, Head 70: 0.008294, the flowers column is similar
+32. Layer 49, Head 84: 0.008291, the flowers column in A is hotter
+33. Layer 55, Head 85: 0.008225, the flowers column in A is hotter
+34. Layer 39, Head 94: 0.008172, the flowers column in B is hotter
+35. Layer 98, Head 85: 0.008170, the flowers column is similar
+36. Layer 39, Head 89: 0.008128, the flowers column in B is hotter
+37. Layer 47, Head 88: 0.008122, the flowers column in A is hotter
+38. Layer 65, Head 00: 0.008065, the flowers column in A is hotter
+39. Layer 49, Head 90: 0.008060, the flowers column in A is hotter
+40. Layer 83, Head 61: 0.008056, the flowers column is similar
+
+
+
+(venv) ubuntu@goblin:~/code/attention-visualizer-comparison$ grep 'A is hotter' ./1000data.txt | wc
+    136    1768    9255
+(venv) ubuntu@goblin:~/code/attention-visualizer-comparison$ grep 'B is hotter' ./1000data.txt | wc
+     77    1001    5230
+     
