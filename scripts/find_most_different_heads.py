@@ -164,7 +164,7 @@ def describe_flowers_column_bias(
     col_mean_b = layer_attn_b[:, flowers_index].mean()
 
     diff = float(col_mean_a.item() - col_mean_b.item())
-    tolerance = 1e-5
+    tolerance = 1e-2
     if abs(diff) <= tolerance:
         return "the flowers column is similar"
     if diff > 0:
@@ -293,10 +293,10 @@ def analyze_squashed_columns(
     if total_abs_diff == 0:
         lines.append("- No column-wise differences detected (total absolute difference is zero).")
 
-    lines.append("")
-    lines.append("Token categories:")
-    for token, category in zip(tokens, categories):
-        lines.append(f"  {token}: {category}")
+    # lines.append("")
+    # lines.append("Token categories:")
+    # for token, category in zip(tokens, categories):
+    #     lines.append(f"  {token}: {category}")
 
     return lines
 

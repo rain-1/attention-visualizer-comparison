@@ -1,0 +1,1013 @@
+Top differing layer/head pairs (by mean absolute difference):
+ 1. Layer 47, Head 75: 0.015255, the flowers column in B is hotter
+ 2. Layer 45, Head 36: 0.013901, the flowers column in B is hotter
+ 3. Layer 47, Head 82: 0.013752, the flowers column in B is hotter
+ 4. Layer 52, Head 36: 0.011624, the flowers column in B is hotter
+ 5. Layer 48, Head 02: 0.011306, the flowers column in A is hotter
+ 6. Layer 65, Head 02: 0.011111, the flowers column in A is hotter
+ 7. Layer 45, Head 43: 0.010531, the flowers column in B is hotter
+ 8. Layer 60, Head 91: 0.010446, the flowers column in B is hotter
+ 9. Layer 54, Head 104: 0.010360, the flowers column in A is hotter
+10. Layer 68, Head 07: 0.010345, the flowers column in A is hotter
+11. Layer 79, Head 05: 0.009982, the flowers column in A is hotter
+12. Layer 38, Head 52: 0.009706, the flowers column in B is hotter
+13. Layer 125, Head 88: 0.009601, the flowers column is similar
+14. Layer 48, Head 104: 0.009494, the flowers column in A is hotter
+15. Layer 63, Head 49: 0.009481, the flowers column in A is hotter
+16. Layer 49, Head 75: 0.009154, the flowers column in B is hotter
+17. Layer 59, Head 21: 0.009095, the flowers column in A is hotter
+18. Layer 64, Head 74: 0.009042, the flowers column in A is hotter
+19. Layer 46, Head 12: 0.008964, the flowers column in B is hotter
+20. Layer 109, Head 80: 0.008855, the flowers column is similar
+21. Layer 62, Head 57: 0.008837, the flowers column is similar
+22. Layer 47, Head 93: 0.008792, the flowers column in A is hotter
+23. Layer 107, Head 54: 0.008644, the flowers column is similar
+24. Layer 46, Head 23: 0.008620, the flowers column in A is hotter
+25. Layer 88, Head 57: 0.008574, the flowers column is similar
+26. Layer 47, Head 74: 0.008574, the flowers column in A is hotter
+27. Layer 117, Head 111: 0.008466, the flowers column is similar
+28. Layer 48, Head 106: 0.008399, the flowers column in A is hotter
+29. Layer 47, Head 86: 0.008359, the flowers column in A is hotter
+30. Layer 48, Head 05: 0.008355, the flowers column in A is hotter
+31. Layer 93, Head 70: 0.008294, the flowers column is similar
+32. Layer 49, Head 84: 0.008291, the flowers column in A is hotter
+33. Layer 55, Head 85: 0.008225, the flowers column in A is hotter
+34. Layer 39, Head 94: 0.008172, the flowers column in B is hotter
+35. Layer 98, Head 85: 0.008170, the flowers column is similar
+36. Layer 39, Head 89: 0.008128, the flowers column in B is hotter
+37. Layer 47, Head 88: 0.008122, the flowers column in A is hotter
+38. Layer 65, Head 00: 0.008065, the flowers column in A is hotter
+39. Layer 49, Head 90: 0.008060, the flowers column in A is hotter
+40. Layer 83, Head 61: 0.008056, the flowers column is similar
+41. Layer 122, Head 104: 0.008005, the flowers column is similar
+42. Layer 33, Head 07: 0.007949, the flowers column in B is hotter
+43. Layer 103, Head 82: 0.007925, the flowers column is similar
+44. Layer 65, Head 05: 0.007903, the flowers column is similar
+45. Layer 48, Head 100: 0.007864, the flowers column in A is hotter
+46. Layer 58, Head 112: 0.007767, the flowers column is similar
+47. Layer 103, Head 111: 0.007756, the flowers column is similar
+48. Layer 61, Head 14: 0.007745, the flowers column in A is hotter
+49. Layer 43, Head 05: 0.007728, the flowers column in B is hotter
+50. Layer 76, Head 77: 0.007722, the flowers column is similar
+51. Layer 119, Head 111: 0.007694, the flowers column is similar
+52. Layer 52, Head 40: 0.007668, the flowers column in A is hotter
+53. Layer 83, Head 99: 0.007662, the flowers column is similar
+54. Layer 44, Head 03: 0.007655, the flowers column in A is hotter
+55. Layer 61, Head 73: 0.007651, the flowers column in A is hotter
+56. Layer 120, Head 110: 0.007651, the flowers column is similar
+57. Layer 59, Head 97: 0.007620, the flowers column in A is hotter
+58. Layer 124, Head 127: 0.007598, the flowers column is similar
+59. Layer 60, Head 93: 0.007552, the flowers column in A is hotter
+60. Layer 123, Head 63: 0.007546, the flowers column is similar
+61. Layer 51, Head 62: 0.007540, the flowers column in A is hotter
+62. Layer 49, Head 89: 0.007513, the flowers column in A is hotter
+63. Layer 40, Head 77: 0.007510, the flowers column in B is hotter
+64. Layer 124, Head 42: 0.007504, the flowers column is similar
+65. Layer 48, Head 111: 0.007488, the flowers column is similar
+66. Layer 123, Head 64: 0.007482, the flowers column is similar
+67. Layer 111, Head 127: 0.007466, the flowers column is similar
+68. Layer 109, Head 73: 0.007445, the flowers column is similar
+69. Layer 124, Head 13: 0.007435, the flowers column is similar
+70. Layer 65, Head 31: 0.007391, the flowers column in A is hotter
+71. Layer 43, Head 28: 0.007345, the flowers column in B is hotter
+72. Layer 50, Head 05: 0.007344, the flowers column in B is hotter
+73. Layer 65, Head 12: 0.007342, the flowers column is similar
+74. Layer 43, Head 18: 0.007305, the flowers column in B is hotter
+75. Layer 51, Head 60: 0.007283, the flowers column in A is hotter
+76. Layer 38, Head 83: 0.007270, the flowers column is similar
+77. Layer 45, Head 37: 0.007265, the flowers column is similar
+78. Layer 65, Head 23: 0.007263, the flowers column in A is hotter
+79. Layer 105, Head 32: 0.007249, the flowers column is similar
+80. Layer 53, Head 08: 0.007232, the flowers column in A is hotter
+81. Layer 105, Head 117: 0.007225, the flowers column is similar
+82. Layer 54, Head 103: 0.007224, the flowers column in A is hotter
+83. Layer 52, Head 26: 0.007223, the flowers column in B is hotter
+84. Layer 125, Head 81: 0.007214, the flowers column is similar
+85. Layer 109, Head 89: 0.007203, the flowers column is similar
+86. Layer 83, Head 111: 0.007202, the flowers column is similar
+87. Layer 52, Head 39: 0.007190, the flowers column is similar
+88. Layer 124, Head 81: 0.007188, the flowers column is similar
+89. Layer 124, Head 89: 0.007166, the flowers column is similar
+90. Layer 45, Head 33: 0.007158, the flowers column is similar
+91. Layer 46, Head 27: 0.007155, the flowers column is similar
+92. Layer 124, Head 106: 0.007146, the flowers column is similar
+93. Layer 43, Head 19: 0.007117, the flowers column is similar
+94. Layer 54, Head 97: 0.007116, the flowers column is similar
+95. Layer 54, Head 110: 0.007094, the flowers column in A is hotter
+96. Layer 118, Head 44: 0.007088, the flowers column is similar
+97. Layer 47, Head 72: 0.007088, the flowers column in B is hotter
+98. Layer 77, Head 19: 0.007082, the flowers column is similar
+99. Layer 52, Head 45: 0.007081, the flowers column in A is hotter
+100. Layer 65, Head 107: 0.007074, the flowers column in A is hotter
+101. Layer 125, Head 91: 0.007067, the flowers column is similar
+102. Layer 92, Head 02: 0.007063, the flowers column is similar
+103. Layer 81, Head 82: 0.007052, the flowers column is similar
+104. Layer 117, Head 48: 0.007048, the flowers column is similar
+105. Layer 124, Head 103: 0.007046, the flowers column is similar
+106. Layer 100, Head 45: 0.007041, the flowers column is similar
+107. Layer 111, Head 121: 0.007032, the flowers column in A is hotter
+108. Layer 38, Head 82: 0.007029, the flowers column is similar
+109. Layer 123, Head 127: 0.007028, the flowers column is similar
+110. Layer 123, Head 125: 0.007019, the flowers column is similar
+111. Layer 125, Head 65: 0.006957, the flowers column is similar
+112. Layer 113, Head 85: 0.006954, the flowers column is similar
+113. Layer 52, Head 80: 0.006951, the flowers column is similar
+114. Layer 38, Head 89: 0.006924, the flowers column in A is hotter
+115. Layer 43, Head 08: 0.006922, the flowers column in B is hotter
+116. Layer 115, Head 121: 0.006921, the flowers column is similar
+117. Layer 125, Head 86: 0.006918, the flowers column is similar
+118. Layer 65, Head 10: 0.006917, the flowers column in A is hotter
+119. Layer 54, Head 98: 0.006915, the flowers column is similar
+120. Layer 109, Head 79: 0.006912, the flowers column in B is hotter
+121. Layer 125, Head 93: 0.006910, the flowers column is similar
+122. Layer 51, Head 58: 0.006900, the flowers column in B is hotter
+123. Layer 117, Head 110: 0.006899, the flowers column is similar
+124. Layer 48, Head 110: 0.006891, the flowers column in A is hotter
+125. Layer 122, Head 90: 0.006884, the flowers column is similar
+126. Layer 125, Head 77: 0.006876, the flowers column is similar
+127. Layer 121, Head 123: 0.006875, the flowers column is similar
+128. Layer 57, Head 56: 0.006869, the flowers column is similar
+129. Layer 78, Head 49: 0.006869, the flowers column is similar
+130. Layer 73, Head 49: 0.006859, the flowers column in B is hotter
+131. Layer 45, Head 39: 0.006854, the flowers column is similar
+132. Layer 121, Head 25: 0.006852, the flowers column is similar
+133. Layer 61, Head 06: 0.006843, the flowers column is similar
+134. Layer 103, Head 115: 0.006837, the flowers column is similar
+135. Layer 45, Head 34: 0.006825, the flowers column is similar
+136. Layer 65, Head 11: 0.006824, the flowers column in A is hotter
+137. Layer 103, Head 70: 0.006817, the flowers column is similar
+138. Layer 44, Head 13: 0.006806, the flowers column is similar
+139. Layer 112, Head 02: 0.006805, the flowers column in B is hotter
+140. Layer 124, Head 04: 0.006801, the flowers column is similar
+141. Layer 42, Head 121: 0.006796, the flowers column in B is hotter
+142. Layer 122, Head 98: 0.006795, the flowers column is similar
+143. Layer 112, Head 118: 0.006788, the flowers column is similar
+144. Layer 110, Head 51: 0.006772, the flowers column is similar
+145. Layer 116, Head 90: 0.006768, the flowers column is similar
+146. Layer 47, Head 73: 0.006767, the flowers column in A is hotter
+147. Layer 64, Head 31: 0.006763, the flowers column is similar
+148. Layer 112, Head 39: 0.006755, the flowers column is similar
+149. Layer 117, Head 108: 0.006752, the flowers column is similar
+150. Layer 62, Head 102: 0.006747, the flowers column is similar
+151. Layer 49, Head 87: 0.006744, the flowers column is similar
+152. Layer 54, Head 106: 0.006732, the flowers column is similar
+153. Layer 63, Head 124: 0.006723, the flowers column is similar
+154. Layer 67, Head 97: 0.006722, the flowers column is similar
+155. Layer 110, Head 54: 0.006722, the flowers column is similar
+156. Layer 111, Head 64: 0.006719, the flowers column in B is hotter
+157. Layer 20, Head 71: 0.006719, the flowers column in B is hotter
+158. Layer 124, Head 122: 0.006719, the flowers column is similar
+159. Layer 25, Head 114: 0.006717, the flowers column is similar
+160. Layer 115, Head 103: 0.006714, the flowers column is similar
+161. Layer 121, Head 104: 0.006706, the flowers column is similar
+162. Layer 46, Head 19: 0.006706, the flowers column in A is hotter
+163. Layer 124, Head 99: 0.006705, the flowers column in A is hotter
+164. Layer 46, Head 07: 0.006699, the flowers column in A is hotter
+165. Layer 124, Head 45: 0.006699, the flowers column is similar
+166. Layer 124, Head 108: 0.006673, the flowers column is similar
+167. Layer 52, Head 35: 0.006663, the flowers column in A is hotter
+168. Layer 43, Head 25: 0.006658, the flowers column is similar
+169. Layer 115, Head 117: 0.006656, the flowers column is similar
+170. Layer 35, Head 11: 0.006651, the flowers column in B is hotter
+171. Layer 117, Head 59: 0.006647, the flowers column is similar
+172. Layer 65, Head 15: 0.006643, the flowers column is similar
+173. Layer 49, Head 80: 0.006630, the flowers column is similar
+174. Layer 109, Head 95: 0.006629, the flowers column is similar
+175. Layer 121, Head 18: 0.006628, the flowers column is similar
+176. Layer 52, Head 44: 0.006624, the flowers column is similar
+177. Layer 124, Head 118: 0.006610, the flowers column is similar
+178. Layer 124, Head 50: 0.006594, the flowers column is similar
+179. Layer 122, Head 30: 0.006589, the flowers column is similar
+180. Layer 45, Head 45: 0.006587, the flowers column is similar
+181. Layer 47, Head 65: 0.006586, the flowers column in B is hotter
+182. Layer 123, Head 116: 0.006583, the flowers column is similar
+183. Layer 49, Head 82: 0.006576, the flowers column in A is hotter
+184. Layer 43, Head 21: 0.006573, the flowers column is similar
+185. Layer 74, Head 32: 0.006573, the flowers column in A is hotter
+186. Layer 124, Head 101: 0.006571, the flowers column is similar
+187. Layer 53, Head 120: 0.006569, the flowers column is similar
+188. Layer 41, Head 49: 0.006562, the flowers column is similar
+189. Layer 125, Head 89: 0.006548, the flowers column is similar
+190. Layer 48, Head 99: 0.006546, the flowers column is similar
+191. Layer 62, Head 48: 0.006546, the flowers column is similar
+192. Layer 89, Head 33: 0.006543, the flowers column in B is hotter
+193. Layer 77, Head 55: 0.006538, the flowers column is similar
+194. Layer 123, Head 79: 0.006523, the flowers column is similar
+195. Layer 114, Head 125: 0.006520, the flowers column is similar
+196. Layer 123, Head 120: 0.006513, the flowers column is similar
+197. Layer 55, Head 94: 0.006509, the flowers column in A is hotter
+198. Layer 124, Head 107: 0.006503, the flowers column is similar
+199. Layer 47, Head 95: 0.006503, the flowers column is similar
+200. Layer 116, Head 13: 0.006495, the flowers column is similar
+201. Layer 107, Head 87: 0.006488, the flowers column is similar
+202. Layer 118, Head 112: 0.006474, the flowers column is similar
+203. Layer 64, Head 75: 0.006473, the flowers column in B is hotter
+204. Layer 116, Head 91: 0.006472, the flowers column is similar
+205. Layer 47, Head 80: 0.006463, the flowers column is similar
+206. Layer 67, Head 102: 0.006460, the flowers column is similar
+207. Layer 86, Head 32: 0.006453, the flowers column is similar
+208. Layer 124, Head 34: 0.006434, the flowers column is similar
+209. Layer 112, Head 117: 0.006431, the flowers column is similar
+210. Layer 106, Head 09: 0.006430, the flowers column is similar
+211. Layer 55, Head 88: 0.006429, the flowers column in A is hotter
+212. Layer 106, Head 69: 0.006422, the flowers column is similar
+213. Layer 106, Head 47: 0.006409, the flowers column is similar
+214. Layer 50, Head 125: 0.006408, the flowers column is similar
+215. Layer 124, Head 70: 0.006406, the flowers column is similar
+216. Layer 46, Head 30: 0.006401, the flowers column in A is hotter
+217. Layer 91, Head 50: 0.006389, the flowers column is similar
+218. Layer 105, Head 81: 0.006388, the flowers column is similar
+219. Layer 49, Head 95: 0.006387, the flowers column in A is hotter
+220. Layer 109, Head 87: 0.006384, the flowers column in A is hotter
+221. Layer 50, Head 01: 0.006384, the flowers column is similar
+222. Layer 49, Head 112: 0.006381, the flowers column is similar
+223. Layer 122, Head 89: 0.006379, the flowers column is similar
+224. Layer 96, Head 82: 0.006369, the flowers column is similar
+225. Layer 56, Head 76: 0.006358, the flowers column is similar
+226. Layer 106, Head 32: 0.006349, the flowers column is similar
+227. Layer 125, Head 80: 0.006341, the flowers column is similar
+228. Layer 57, Head 96: 0.006328, the flowers column is similar
+229. Layer 49, Head 94: 0.006327, the flowers column in A is hotter
+230. Layer 43, Head 03: 0.006326, the flowers column is similar
+231. Layer 68, Head 10: 0.006326, the flowers column in A is hotter
+232. Layer 124, Head 109: 0.006319, the flowers column is similar
+233. Layer 121, Head 24: 0.006317, the flowers column is similar
+234. Layer 60, Head 07: 0.006316, the flowers column is similar
+235. Layer 58, Head 37: 0.006313, the flowers column in A is hotter
+236. Layer 84, Head 22: 0.006310, the flowers column is similar
+237. Layer 118, Head 19: 0.006309, the flowers column is similar
+238. Layer 123, Head 101: 0.006307, the flowers column is similar
+239. Layer 43, Head 27: 0.006303, the flowers column is similar
+240. Layer 38, Head 58: 0.006292, the flowers column is similar
+241. Layer 65, Head 09: 0.006291, the flowers column is similar
+242. Layer 38, Head 85: 0.006289, the flowers column in B is hotter
+243. Layer 43, Head 31: 0.006286, the flowers column in A is hotter
+244. Layer 123, Head 100: 0.006286, the flowers column is similar
+245. Layer 44, Head 15: 0.006285, the flowers column is similar
+246. Layer 47, Head 20: 0.006284, the flowers column is similar
+247. Layer 38, Head 84: 0.006282, the flowers column is similar
+248. Layer 124, Head 62: 0.006278, the flowers column is similar
+249. Layer 89, Head 38: 0.006270, the flowers column is similar
+250. Layer 123, Head 84: 0.006262, the flowers column is similar
+251. Layer 61, Head 65: 0.006257, the flowers column in A is hotter
+252. Layer 46, Head 03: 0.006253, the flowers column in A is hotter
+253. Layer 38, Head 99: 0.006248, the flowers column in B is hotter
+254. Layer 106, Head 22: 0.006243, the flowers column is similar
+255. Layer 44, Head 09: 0.006237, the flowers column is similar
+256. Layer 111, Head 95: 0.006233, the flowers column is similar
+257. Layer 51, Head 55: 0.006232, the flowers column is similar
+258. Layer 123, Head 74: 0.006221, the flowers column is similar
+259. Layer 125, Head 92: 0.006220, the flowers column is similar
+260. Layer 111, Head 108: 0.006212, the flowers column is similar
+261. Layer 54, Head 99: 0.006210, the flowers column is similar
+262. Layer 47, Head 89: 0.006204, the flowers column is similar
+263. Layer 113, Head 17: 0.006202, the flowers column is similar
+264. Layer 97, Head 01: 0.006193, the flowers column is similar
+265. Layer 73, Head 116: 0.006192, the flowers column is similar
+266. Layer 123, Head 109: 0.006187, the flowers column is similar
+267. Layer 49, Head 88: 0.006180, the flowers column is similar
+268. Layer 77, Head 52: 0.006179, the flowers column is similar
+269. Layer 116, Head 111: 0.006179, the flowers column is similar
+270. Layer 123, Head 61: 0.006175, the flowers column is similar
+271. Layer 60, Head 81: 0.006174, the flowers column in A is hotter
+272. Layer 119, Head 123: 0.006161, the flowers column is similar
+273. Layer 76, Head 67: 0.006159, the flowers column is similar
+274. Layer 113, Head 24: 0.006155, the flowers column is similar
+275. Layer 39, Head 84: 0.006145, the flowers column is similar
+276. Layer 42, Head 41: 0.006145, the flowers column is similar
+277. Layer 46, Head 16: 0.006144, the flowers column in A is hotter
+278. Layer 45, Head 41: 0.006143, the flowers column in B is hotter
+279. Layer 60, Head 92: 0.006132, the flowers column in A is hotter
+280. Layer 43, Head 14: 0.006129, the flowers column in A is hotter
+281. Layer 119, Head 115: 0.006117, the flowers column is similar
+282. Layer 57, Head 63: 0.006116, the flowers column is similar
+283. Layer 57, Head 50: 0.006111, the flowers column is similar
+284. Layer 117, Head 74: 0.006108, the flowers column in A is hotter
+285. Layer 59, Head 30: 0.006107, the flowers column in B is hotter
+286. Layer 43, Head 04: 0.006106, the flowers column is similar
+287. Layer 47, Head 18: 0.006099, the flowers column is similar
+288. Layer 91, Head 53: 0.006096, the flowers column is similar
+289. Layer 114, Head 18: 0.006095, the flowers column is similar
+290. Layer 62, Head 49: 0.006087, the flowers column is similar
+291. Layer 46, Head 50: 0.006085, the flowers column is similar
+292. Layer 66, Head 115: 0.006078, the flowers column is similar
+293. Layer 48, Head 46: 0.006076, the flowers column in A is hotter
+294. Layer 67, Head 96: 0.006072, the flowers column is similar
+295. Layer 54, Head 107: 0.006070, the flowers column in A is hotter
+296. Layer 41, Head 33: 0.006066, the flowers column in B is hotter
+297. Layer 43, Head 16: 0.006065, the flowers column is similar
+298. Layer 38, Head 51: 0.006061, the flowers column is similar
+299. Layer 47, Head 87: 0.006059, the flowers column in A is hotter
+300. Layer 123, Head 50: 0.006047, the flowers column is similar
+301. Layer 52, Head 32: 0.006045, the flowers column is similar
+302. Layer 82, Head 73: 0.006044, the flowers column is similar
+303. Layer 73, Head 59: 0.006043, the flowers column in A is hotter
+304. Layer 53, Head 125: 0.006036, the flowers column in A is hotter
+305. Layer 61, Head 77: 0.006034, the flowers column is similar
+306. Layer 53, Head 119: 0.006028, the flowers column is similar
+307. Layer 119, Head 101: 0.006027, the flowers column is similar
+308. Layer 124, Head 98: 0.006022, the flowers column in A is hotter
+309. Layer 45, Head 40: 0.006022, the flowers column is similar
+310. Layer 63, Head 38: 0.006021, the flowers column is similar
+311. Layer 74, Head 125: 0.006015, the flowers column is similar
+312. Layer 52, Head 43: 0.006012, the flowers column in A is hotter
+313. Layer 65, Head 07: 0.006011, the flowers column is similar
+314. Layer 41, Head 46: 0.006009, the flowers column is similar
+315. Layer 123, Head 117: 0.006006, the flowers column is similar
+316. Layer 52, Head 25: 0.006005, the flowers column is similar
+317. Layer 47, Head 91: 0.006004, the flowers column is similar
+318. Layer 116, Head 95: 0.006002, the flowers column is similar
+319. Layer 109, Head 66: 0.005993, the flowers column is similar
+320. Layer 46, Head 20: 0.005992, the flowers column is similar
+321. Layer 41, Head 57: 0.005984, the flowers column in A is hotter
+322. Layer 56, Head 01: 0.005975, the flowers column is similar
+323. Layer 104, Head 122: 0.005969, the flowers column is similar
+324. Layer 62, Head 52: 0.005966, the flowers column in A is hotter
+325. Layer 67, Head 120: 0.005962, the flowers column is similar
+326. Layer 123, Head 92: 0.005960, the flowers column is similar
+327. Layer 103, Head 95: 0.005959, the flowers column is similar
+328. Layer 111, Head 80: 0.005958, the flowers column is similar
+329. Layer 123, Head 95: 0.005954, the flowers column is similar
+330. Layer 41, Head 32: 0.005948, the flowers column in B is hotter
+331. Layer 53, Head 12: 0.005948, the flowers column is similar
+332. Layer 124, Head 44: 0.005942, the flowers column is similar
+333. Layer 42, Head 23: 0.005941, the flowers column is similar
+334. Layer 117, Head 63: 0.005935, the flowers column is similar
+335. Layer 107, Head 51: 0.005929, the flowers column is similar
+336. Layer 62, Head 58: 0.005923, the flowers column is similar
+337. Layer 107, Head 92: 0.005921, the flowers column is similar
+338. Layer 124, Head 125: 0.005918, the flowers column is similar
+339. Layer 124, Head 69: 0.005916, the flowers column is similar
+340. Layer 50, Head 03: 0.005914, the flowers column in B is hotter
+341. Layer 41, Head 51: 0.005907, the flowers column in B is hotter
+342. Layer 103, Head 72: 0.005900, the flowers column is similar
+343. Layer 49, Head 91: 0.005897, the flowers column in B is hotter
+344. Layer 102, Head 04: 0.005895, the flowers column is similar
+345. Layer 123, Head 118: 0.005893, the flowers column is similar
+346. Layer 122, Head 87: 0.005892, the flowers column is similar
+347. Layer 99, Head 37: 0.005889, the flowers column is similar
+348. Layer 55, Head 95: 0.005889, the flowers column is similar
+349. Layer 43, Head 22: 0.005880, the flowers column is similar
+350. Layer 123, Head 87: 0.005879, the flowers column is similar
+351. Layer 105, Head 34: 0.005878, the flowers column is similar
+352. Layer 109, Head 68: 0.005876, the flowers column in A is hotter
+353. Layer 124, Head 38: 0.005871, the flowers column is similar
+354. Layer 109, Head 76: 0.005867, the flowers column is similar
+355. Layer 45, Head 44: 0.005857, the flowers column in A is hotter
+356. Layer 50, Head 116: 0.005854, the flowers column is similar
+357. Layer 48, Head 07: 0.005849, the flowers column is similar
+358. Layer 117, Head 100: 0.005846, the flowers column is similar
+359. Layer 84, Head 38: 0.005841, the flowers column is similar
+360. Layer 123, Head 81: 0.005841, the flowers column is similar
+361. Layer 48, Head 97: 0.005836, the flowers column is similar
+362. Layer 48, Head 03: 0.005834, the flowers column in A is hotter
+363. Layer 111, Head 70: 0.005830, the flowers column is similar
+364. Layer 84, Head 17: 0.005829, the flowers column is similar
+365. Layer 37, Head 105: 0.005828, the flowers column in B is hotter
+366. Layer 124, Head 115: 0.005825, the flowers column is similar
+367. Layer 116, Head 94: 0.005823, the flowers column in A is hotter
+368. Layer 79, Head 01: 0.005823, the flowers column is similar
+369. Layer 117, Head 04: 0.005822, the flowers column is similar
+370. Layer 48, Head 109: 0.005820, the flowers column is similar
+371. Layer 65, Head 18: 0.005816, the flowers column in A is hotter
+372. Layer 43, Head 20: 0.005815, the flowers column is similar
+373. Layer 47, Head 92: 0.005814, the flowers column is similar
+374. Layer 122, Head 93: 0.005809, the flowers column is similar
+375. Layer 124, Head 110: 0.005806, the flowers column is similar
+376. Layer 111, Head 116: 0.005806, the flowers column in A is hotter
+377. Layer 80, Head 116: 0.005799, the flowers column is similar
+378. Layer 58, Head 127: 0.005796, the flowers column in B is hotter
+379. Layer 55, Head 89: 0.005790, the flowers column is similar
+380. Layer 55, Head 80: 0.005789, the flowers column is similar
+381. Layer 49, Head 92: 0.005787, the flowers column is similar
+382. Layer 77, Head 49: 0.005783, the flowers column is similar
+383. Layer 109, Head 81: 0.005782, the flowers column is similar
+384. Layer 52, Head 33: 0.005776, the flowers column is similar
+385. Layer 47, Head 23: 0.005776, the flowers column is similar
+386. Layer 43, Head 02: 0.005772, the flowers column is similar
+387. Layer 38, Head 59: 0.005772, the flowers column in B is hotter
+388. Layer 125, Head 85: 0.005770, the flowers column is similar
+389. Layer 45, Head 42: 0.005769, the flowers column is similar
+390. Layer 39, Head 26: 0.005767, the flowers column is similar
+391. Layer 111, Head 82: 0.005761, the flowers column is similar
+392. Layer 54, Head 111: 0.005758, the flowers column in B is hotter
+393. Layer 121, Head 37: 0.005752, the flowers column is similar
+394. Layer 111, Head 124: 0.005749, the flowers column is similar
+395. Layer 125, Head 03: 0.005744, the flowers column is similar
+396. Layer 37, Head 58: 0.005743, the flowers column in A is hotter
+397. Layer 60, Head 90: 0.005739, the flowers column is similar
+398. Layer 42, Head 21: 0.005732, the flowers column is similar
+399. Layer 107, Head 29: 0.005731, the flowers column is similar
+400. Layer 125, Head 46: 0.005727, the flowers column is similar
+401. Layer 65, Head 03: 0.005725, the flowers column is similar
+402. Layer 56, Head 65: 0.005725, the flowers column is similar
+403. Layer 124, Head 65: 0.005723, the flowers column is similar
+404. Layer 117, Head 75: 0.005721, the flowers column is similar
+405. Layer 124, Head 126: 0.005721, the flowers column is similar
+406. Layer 122, Head 69: 0.005720, the flowers column in A is hotter
+407. Layer 124, Head 32: 0.005719, the flowers column is similar
+408. Layer 39, Head 82: 0.005717, the flowers column in B is hotter
+409. Layer 125, Head 83: 0.005715, the flowers column is similar
+410. Layer 99, Head 116: 0.005714, the flowers column is similar
+411. Layer 50, Head 118: 0.005711, the flowers column is similar
+412. Layer 70, Head 54: 0.005707, the flowers column is similar
+413. Layer 121, Head 20: 0.005706, the flowers column is similar
+414. Layer 113, Head 32: 0.005703, the flowers column is similar
+415. Layer 124, Head 105: 0.005701, the flowers column is similar
+416. Layer 62, Head 50: 0.005701, the flowers column is similar
+417. Layer 38, Head 90: 0.005699, the flowers column in B is hotter
+418. Layer 125, Head 103: 0.005697, the flowers column is similar
+419. Layer 122, Head 68: 0.005696, the flowers column is similar
+420. Layer 49, Head 99: 0.005695, the flowers column is similar
+421. Layer 119, Head 114: 0.005694, the flowers column is similar
+422. Layer 99, Head 42: 0.005693, the flowers column is similar
+423. Layer 124, Head 15: 0.005690, the flowers column is similar
+424. Layer 50, Head 11: 0.005685, the flowers column in B is hotter
+425. Layer 123, Head 122: 0.005684, the flowers column is similar
+426. Layer 112, Head 36: 0.005680, the flowers column is similar
+427. Layer 91, Head 61: 0.005679, the flowers column is similar
+428. Layer 124, Head 09: 0.005678, the flowers column is similar
+429. Layer 93, Head 101: 0.005677, the flowers column is similar
+430. Layer 50, Head 115: 0.005675, the flowers column in A is hotter
+431. Layer 107, Head 95: 0.005670, the flowers column is similar
+432. Layer 43, Head 23: 0.005667, the flowers column in B is hotter
+433. Layer 47, Head 94: 0.005666, the flowers column is similar
+434. Layer 50, Head 68: 0.005661, the flowers column is similar
+435. Layer 107, Head 49: 0.005659, the flowers column is similar
+436. Layer 46, Head 15: 0.005658, the flowers column is similar
+437. Layer 61, Head 13: 0.005654, the flowers column is similar
+438. Layer 124, Head 85: 0.005654, the flowers column is similar
+439. Layer 37, Head 35: 0.005652, the flowers column in B is hotter
+440. Layer 112, Head 112: 0.005651, the flowers column is similar
+441. Layer 125, Head 54: 0.005648, the flowers column is similar
+442. Layer 41, Head 41: 0.005647, the flowers column in B is hotter
+443. Layer 51, Head 57: 0.005643, the flowers column in A is hotter
+444. Layer 121, Head 117: 0.005639, the flowers column in A is hotter
+445. Layer 124, Head 100: 0.005638, the flowers column is similar
+446. Layer 116, Head 83: 0.005638, the flowers column is similar
+447. Layer 113, Head 20: 0.005637, the flowers column is similar
+448. Layer 113, Head 74: 0.005634, the flowers column is similar
+449. Layer 124, Head 43: 0.005631, the flowers column is similar
+450. Layer 50, Head 120: 0.005631, the flowers column is similar
+451. Layer 50, Head 08: 0.005630, the flowers column is similar
+452. Layer 107, Head 09: 0.005629, the flowers column is similar
+453. Layer 105, Head 119: 0.005624, the flowers column is similar
+454. Layer 40, Head 52: 0.005614, the flowers column in B is hotter
+455. Layer 45, Head 53: 0.005612, the flowers column is similar
+456. Layer 89, Head 35: 0.005607, the flowers column is similar
+457. Layer 61, Head 69: 0.005599, the flowers column in A is hotter
+458. Layer 124, Head 14: 0.005596, the flowers column is similar
+459. Layer 124, Head 96: 0.005592, the flowers column is similar
+460. Layer 53, Head 115: 0.005587, the flowers column is similar
+461. Layer 62, Head 63: 0.005584, the flowers column is similar
+462. Layer 52, Head 31: 0.005584, the flowers column is similar
+463. Layer 53, Head 121: 0.005583, the flowers column is similar
+464. Layer 91, Head 55: 0.005582, the flowers column in B is hotter
+465. Layer 57, Head 62: 0.005582, the flowers column is similar
+466. Layer 46, Head 28: 0.005573, the flowers column is similar
+467. Layer 98, Head 51: 0.005571, the flowers column is similar
+468. Layer 61, Head 42: 0.005571, the flowers column in A is hotter
+469. Layer 124, Head 40: 0.005571, the flowers column is similar
+470. Layer 122, Head 16: 0.005568, the flowers column is similar
+471. Layer 116, Head 63: 0.005567, the flowers column is similar
+472. Layer 114, Head 122: 0.005565, the flowers column is similar
+473. Layer 125, Head 84: 0.005562, the flowers column is similar
+474. Layer 42, Head 30: 0.005561, the flowers column is similar
+475. Layer 110, Head 63: 0.005557, the flowers column is similar
+476. Layer 123, Head 04: 0.005556, the flowers column is similar
+477. Layer 47, Head 90: 0.005544, the flowers column is similar
+478. Layer 118, Head 25: 0.005540, the flowers column is similar
+479. Layer 66, Head 00: 0.005537, the flowers column in A is hotter
+480. Layer 78, Head 50: 0.005537, the flowers column is similar
+481. Layer 124, Head 05: 0.005534, the flowers column is similar
+482. Layer 41, Head 91: 0.005531, the flowers column is similar
+483. Layer 90, Head 111: 0.005528, the flowers column is similar
+484. Layer 76, Head 88: 0.005520, the flowers column is similar
+485. Layer 92, Head 122: 0.005515, the flowers column is similar
+486. Layer 125, Head 94: 0.005514, the flowers column is similar
+487. Layer 50, Head 13: 0.005511, the flowers column is similar
+488. Layer 59, Head 17: 0.005511, the flowers column in A is hotter
+489. Layer 41, Head 55: 0.005500, the flowers column is similar
+490. Layer 50, Head 119: 0.005494, the flowers column in A is hotter
+491. Layer 42, Head 27: 0.005493, the flowers column is similar
+492. Layer 119, Head 57: 0.005483, the flowers column is similar
+493. Layer 38, Head 62: 0.005481, the flowers column in B is hotter
+494. Layer 55, Head 81: 0.005478, the flowers column is similar
+495. Layer 67, Head 111: 0.005477, the flowers column is similar
+496. Layer 51, Head 96: 0.005474, the flowers column in A is hotter
+497. Layer 116, Head 96: 0.005473, the flowers column is similar
+498. Layer 114, Head 114: 0.005471, the flowers column is similar
+499. Layer 74, Head 33: 0.005468, the flowers column in A is hotter
+500. Layer 44, Head 04: 0.005467, the flowers column is similar
+501. Layer 44, Head 12: 0.005465, the flowers column is similar
+502. Layer 112, Head 104: 0.005464, the flowers column is similar
+503. Layer 48, Head 115: 0.005461, the flowers column is similar
+504. Layer 54, Head 101: 0.005461, the flowers column is similar
+505. Layer 100, Head 93: 0.005460, the flowers column is similar
+506. Layer 86, Head 66: 0.005458, the flowers column is similar
+507. Layer 125, Head 95: 0.005458, the flowers column is similar
+508. Layer 72, Head 55: 0.005454, the flowers column is similar
+509. Layer 114, Head 45: 0.005451, the flowers column is similar
+510. Layer 124, Head 33: 0.005448, the flowers column is similar
+511. Layer 118, Head 26: 0.005446, the flowers column is similar
+512. Layer 53, Head 114: 0.005445, the flowers column is similar
+513. Layer 92, Head 04: 0.005444, the flowers column in A is hotter
+514. Layer 56, Head 75: 0.005442, the flowers column is similar
+515. Layer 62, Head 27: 0.005440, the flowers column is similar
+516. Layer 40, Head 93: 0.005437, the flowers column in B is hotter
+517. Layer 50, Head 112: 0.005435, the flowers column is similar
+518. Layer 76, Head 79: 0.005434, the flowers column is similar
+519. Layer 40, Head 76: 0.005434, the flowers column is similar
+520. Layer 113, Head 07: 0.005434, the flowers column is similar
+521. Layer 111, Head 15: 0.005434, the flowers column is similar
+522. Layer 42, Head 24: 0.005432, the flowers column is similar
+523. Layer 46, Head 18: 0.005429, the flowers column is similar
+524. Layer 62, Head 54: 0.005428, the flowers column is similar
+525. Layer 48, Head 101: 0.005428, the flowers column in A is hotter
+526. Layer 107, Head 15: 0.005428, the flowers column is similar
+527. Layer 115, Head 20: 0.005425, the flowers column is similar
+528. Layer 84, Head 69: 0.005424, the flowers column is similar
+529. Layer 92, Head 114: 0.005424, the flowers column is similar
+530. Layer 61, Head 67: 0.005422, the flowers column is similar
+531. Layer 123, Head 115: 0.005420, the flowers column is similar
+532. Layer 120, Head 119: 0.005418, the flowers column is similar
+533. Layer 125, Head 04: 0.005414, the flowers column is similar
+534. Layer 46, Head 26: 0.005412, the flowers column is similar
+535. Layer 112, Head 45: 0.005412, the flowers column is similar
+536. Layer 116, Head 57: 0.005410, the flowers column is similar
+537. Layer 124, Head 114: 0.005409, the flowers column is similar
+538. Layer 84, Head 121: 0.005409, the flowers column is similar
+539. Layer 43, Head 36: 0.005409, the flowers column is similar
+540. Layer 113, Head 19: 0.005407, the flowers column is similar
+541. Layer 122, Head 74: 0.005406, the flowers column is similar
+542. Layer 60, Head 82: 0.005403, the flowers column in B is hotter
+543. Layer 122, Head 96: 0.005400, the flowers column is similar
+544. Layer 67, Head 28: 0.005400, the flowers column in A is hotter
+545. Layer 44, Head 08: 0.005399, the flowers column is similar
+546. Layer 58, Head 41: 0.005395, the flowers column in A is hotter
+547. Layer 55, Head 84: 0.005391, the flowers column in A is hotter
+548. Layer 81, Head 119: 0.005387, the flowers column is similar
+549. Layer 124, Head 37: 0.005387, the flowers column is similar
+550. Layer 43, Head 24: 0.005386, the flowers column is similar
+551. Layer 71, Head 42: 0.005386, the flowers column is similar
+552. Layer 123, Head 58: 0.005383, the flowers column is similar
+553. Layer 66, Head 121: 0.005381, the flowers column is similar
+554. Layer 47, Head 71: 0.005379, the flowers column in A is hotter
+555. Layer 46, Head 13: 0.005374, the flowers column is similar
+556. Layer 78, Head 38: 0.005373, the flowers column is similar
+557. Layer 44, Head 25: 0.005368, the flowers column is similar
+558. Layer 124, Head 01: 0.005367, the flowers column is similar
+559. Layer 62, Head 24: 0.005367, the flowers column is similar
+560. Layer 112, Head 34: 0.005363, the flowers column is similar
+561. Layer 55, Head 93: 0.005363, the flowers column in A is hotter
+562. Layer 115, Head 36: 0.005361, the flowers column is similar
+563. Layer 46, Head 22: 0.005355, the flowers column is similar
+564. Layer 53, Head 04: 0.005354, the flowers column is similar
+565. Layer 42, Head 43: 0.005351, the flowers column is similar
+566. Layer 38, Head 87: 0.005350, the flowers column is similar
+567. Layer 115, Head 102: 0.005350, the flowers column is similar
+568. Layer 75, Head 59: 0.005347, the flowers column is similar
+569. Layer 124, Head 08: 0.005347, the flowers column is similar
+570. Layer 122, Head 25: 0.005344, the flowers column is similar
+571. Layer 53, Head 127: 0.005343, the flowers column in A is hotter
+572. Layer 43, Head 01: 0.005343, the flowers column is similar
+573. Layer 42, Head 45: 0.005338, the flowers column is similar
+574. Layer 113, Head 63: 0.005335, the flowers column is similar
+575. Layer 40, Head 11: 0.005335, the flowers column is similar
+576. Layer 81, Head 121: 0.005331, the flowers column is similar
+577. Layer 52, Head 89: 0.005326, the flowers column is similar
+578. Layer 46, Head 52: 0.005322, the flowers column is similar
+579. Layer 107, Head 114: 0.005321, the flowers column is similar
+580. Layer 37, Head 09: 0.005321, the flowers column is similar
+581. Layer 51, Head 52: 0.005317, the flowers column in B is hotter
+582. Layer 49, Head 123: 0.005316, the flowers column is similar
+583. Layer 52, Head 38: 0.005316, the flowers column in B is hotter
+584. Layer 123, Head 104: 0.005313, the flowers column is similar
+585. Layer 79, Head 41: 0.005309, the flowers column is similar
+586. Layer 79, Head 46: 0.005304, the flowers column is similar
+587. Layer 115, Head 127: 0.005302, the flowers column is similar
+588. Layer 53, Head 126: 0.005301, the flowers column is similar
+589. Layer 61, Head 75: 0.005300, the flowers column is similar
+590. Layer 112, Head 42: 0.005298, the flowers column is similar
+591. Layer 111, Head 99: 0.005298, the flowers column is similar
+592. Layer 122, Head 77: 0.005296, the flowers column is similar
+593. Layer 108, Head 57: 0.005296, the flowers column is similar
+594. Layer 52, Head 28: 0.005295, the flowers column in A is hotter
+595. Layer 57, Head 109: 0.005291, the flowers column in A is hotter
+596. Layer 58, Head 57: 0.005291, the flowers column in B is hotter
+597. Layer 122, Head 100: 0.005290, the flowers column is similar
+598. Layer 102, Head 27: 0.005288, the flowers column is similar
+599. Layer 59, Head 14: 0.005282, the flowers column is similar
+600. Layer 53, Head 116: 0.005282, the flowers column is similar
+601. Layer 45, Head 46: 0.005280, the flowers column is similar
+602. Layer 105, Head 110: 0.005273, the flowers column is similar
+603. Layer 123, Head 80: 0.005271, the flowers column is similar
+604. Layer 103, Head 80: 0.005266, the flowers column is similar
+605. Layer 107, Head 100: 0.005266, the flowers column is similar
+606. Layer 49, Head 08: 0.005265, the flowers column is similar
+607. Layer 123, Head 124: 0.005263, the flowers column is similar
+608. Layer 120, Head 26: 0.005262, the flowers column in A is hotter
+609. Layer 112, Head 41: 0.005261, the flowers column is similar
+610. Layer 37, Head 00: 0.005260, the flowers column is similar
+611. Layer 90, Head 11: 0.005255, the flowers column is similar
+612. Layer 40, Head 03: 0.005251, the flowers column is similar
+613. Layer 54, Head 102: 0.005250, the flowers column in A is hotter
+614. Layer 43, Head 40: 0.005248, the flowers column is similar
+615. Layer 43, Head 37: 0.005248, the flowers column in B is hotter
+616. Layer 109, Head 86: 0.005245, the flowers column is similar
+617. Layer 62, Head 61: 0.005244, the flowers column is similar
+618. Layer 55, Head 92: 0.005243, the flowers column is similar
+619. Layer 125, Head 117: 0.005239, the flowers column is similar
+620. Layer 47, Head 70: 0.005238, the flowers column in B is hotter
+621. Layer 57, Head 49: 0.005236, the flowers column is similar
+622. Layer 71, Head 60: 0.005234, the flowers column in A is hotter
+623. Layer 123, Head 75: 0.005231, the flowers column is similar
+624. Layer 60, Head 88: 0.005229, the flowers column is similar
+625. Layer 64, Head 79: 0.005229, the flowers column is similar
+626. Layer 119, Head 61: 0.005227, the flowers column is similar
+627. Layer 109, Head 64: 0.005227, the flowers column in A is hotter
+628. Layer 124, Head 36: 0.005227, the flowers column is similar
+629. Layer 80, Head 80: 0.005226, the flowers column is similar
+630. Layer 118, Head 95: 0.005226, the flowers column is similar
+631. Layer 63, Head 118: 0.005223, the flowers column is similar
+632. Layer 81, Head 86: 0.005220, the flowers column is similar
+633. Layer 51, Head 51: 0.005218, the flowers column is similar
+634. Layer 116, Head 82: 0.005217, the flowers column is similar
+635. Layer 79, Head 00: 0.005217, the flowers column is similar
+636. Layer 110, Head 117: 0.005217, the flowers column is similar
+637. Layer 43, Head 12: 0.005215, the flowers column in B is hotter
+638. Layer 49, Head 121: 0.005215, the flowers column is similar
+639. Layer 74, Head 47: 0.005213, the flowers column in B is hotter
+640. Layer 63, Head 125: 0.005212, the flowers column is similar
+641. Layer 46, Head 25: 0.005209, the flowers column is similar
+642. Layer 122, Head 82: 0.005207, the flowers column is similar
+643. Layer 20, Head 75: 0.005206, the flowers column is similar
+644. Layer 121, Head 110: 0.005204, the flowers column is similar
+645. Layer 66, Head 95: 0.005201, the flowers column in A is hotter
+646. Layer 111, Head 122: 0.005199, the flowers column is similar
+647. Layer 100, Head 100: 0.005198, the flowers column is similar
+648. Layer 56, Head 70: 0.005198, the flowers column is similar
+649. Layer 121, Head 122: 0.005195, the flowers column is similar
+650. Layer 123, Head 123: 0.005193, the flowers column is similar
+651. Layer 53, Head 123: 0.005191, the flowers column is similar
+652. Layer 114, Head 17: 0.005191, the flowers column is similar
+653. Layer 41, Head 62: 0.005187, the flowers column is similar
+654. Layer 48, Head 107: 0.005187, the flowers column is similar
+655. Layer 42, Head 26: 0.005186, the flowers column is similar
+656. Layer 120, Head 118: 0.005184, the flowers column is similar
+657. Layer 71, Head 87: 0.005184, the flowers column in A is hotter
+658. Layer 41, Head 40: 0.005183, the flowers column in B is hotter
+659. Layer 46, Head 17: 0.005182, the flowers column is similar
+660. Layer 69, Head 77: 0.005181, the flowers column is similar
+661. Layer 117, Head 102: 0.005181, the flowers column is similar
+662. Layer 123, Head 06: 0.005180, the flowers column is similar
+663. Layer 116, Head 101: 0.005171, the flowers column is similar
+664. Layer 108, Head 72: 0.005169, the flowers column is similar
+665. Layer 123, Head 90: 0.005167, the flowers column is similar
+666. Layer 123, Head 119: 0.005167, the flowers column is similar
+667. Layer 53, Head 112: 0.005166, the flowers column is similar
+668. Layer 53, Head 124: 0.005166, the flowers column is similar
+669. Layer 116, Head 86: 0.005164, the flowers column is similar
+670. Layer 123, Head 94: 0.005161, the flowers column is similar
+671. Layer 120, Head 126: 0.005160, the flowers column is similar
+672. Layer 124, Head 59: 0.005156, the flowers column is similar
+673. Layer 48, Head 14: 0.005151, the flowers column in B is hotter
+674. Layer 38, Head 22: 0.005148, the flowers column is similar
+675. Layer 116, Head 110: 0.005145, the flowers column is similar
+676. Layer 48, Head 88: 0.005143, the flowers column is similar
+677. Layer 77, Head 63: 0.005143, the flowers column is similar
+678. Layer 43, Head 13: 0.005137, the flowers column is similar
+679. Layer 57, Head 108: 0.005137, the flowers column is similar
+680. Layer 119, Head 70: 0.005136, the flowers column is similar
+681. Layer 92, Head 125: 0.005135, the flowers column is similar
+682. Layer 112, Head 08: 0.005134, the flowers column is similar
+683. Layer 48, Head 105: 0.005133, the flowers column in A is hotter
+684. Layer 40, Head 69: 0.005133, the flowers column is similar
+685. Layer 65, Head 61: 0.005130, the flowers column in A is hotter
+686. Layer 83, Head 20: 0.005130, the flowers column is similar
+687. Layer 121, Head 07: 0.005128, the flowers column is similar
+688. Layer 78, Head 23: 0.005128, the flowers column is similar
+689. Layer 47, Head 81: 0.005127, the flowers column in A is hotter
+690. Layer 108, Head 75: 0.005126, the flowers column is similar
+691. Layer 98, Head 87: 0.005125, the flowers column is similar
+692. Layer 73, Head 55: 0.005125, the flowers column is similar
+693. Layer 109, Head 72: 0.005124, the flowers column is similar
+694. Layer 91, Head 14: 0.005124, the flowers column is similar
+695. Layer 106, Head 20: 0.005123, the flowers column is similar
+696. Layer 39, Head 92: 0.005117, the flowers column is similar
+697. Layer 109, Head 69: 0.005117, the flowers column is similar
+698. Layer 120, Head 89: 0.005116, the flowers column in A is hotter
+699. Layer 45, Head 47: 0.005115, the flowers column is similar
+700. Layer 110, Head 124: 0.005114, the flowers column is similar
+701. Layer 53, Head 117: 0.005113, the flowers column in A is hotter
+702. Layer 88, Head 49: 0.005106, the flowers column is similar
+703. Layer 103, Head 76: 0.005104, the flowers column is similar
+704. Layer 58, Head 44: 0.005103, the flowers column is similar
+705. Layer 61, Head 72: 0.005096, the flowers column in A is hotter
+706. Layer 110, Head 37: 0.005096, the flowers column is similar
+707. Layer 52, Head 27: 0.005094, the flowers column is similar
+708. Layer 65, Head 01: 0.005092, the flowers column in A is hotter
+709. Layer 61, Head 70: 0.005091, the flowers column in B is hotter
+710. Layer 106, Head 21: 0.005089, the flowers column is similar
+711. Layer 85, Head 117: 0.005088, the flowers column is similar
+712. Layer 110, Head 53: 0.005082, the flowers column is similar
+713. Layer 90, Head 06: 0.005080, the flowers column is similar
+714. Layer 40, Head 65: 0.005078, the flowers column is similar
+715. Layer 69, Head 74: 0.005073, the flowers column is similar
+716. Layer 121, Head 26: 0.005070, the flowers column is similar
+717. Layer 42, Head 44: 0.005068, the flowers column is similar
+718. Layer 50, Head 121: 0.005067, the flowers column in A is hotter
+719. Layer 106, Head 54: 0.005066, the flowers column is similar
+720. Layer 48, Head 118: 0.005060, the flowers column is similar
+721. Layer 52, Head 94: 0.005060, the flowers column is similar
+722. Layer 50, Head 117: 0.005058, the flowers column is similar
+723. Layer 93, Head 84: 0.005058, the flowers column is similar
+724. Layer 124, Head 77: 0.005055, the flowers column is similar
+725. Layer 61, Head 04: 0.005055, the flowers column is similar
+726. Layer 120, Head 84: 0.005053, the flowers column is similar
+727. Layer 44, Head 05: 0.005053, the flowers column is similar
+728. Layer 118, Head 34: 0.005050, the flowers column is similar
+729. Layer 110, Head 43: 0.005049, the flowers column is similar
+730. Layer 110, Head 57: 0.005049, the flowers column is similar
+731. Layer 43, Head 17: 0.005049, the flowers column is similar
+732. Layer 42, Head 46: 0.005048, the flowers column is similar
+733. Layer 43, Head 61: 0.005047, the flowers column in A is hotter
+734. Layer 110, Head 48: 0.005047, the flowers column is similar
+735. Layer 47, Head 83: 0.005044, the flowers column is similar
+736. Layer 83, Head 93: 0.005044, the flowers column is similar
+737. Layer 49, Head 93: 0.005040, the flowers column is similar
+738. Layer 45, Head 81: 0.005037, the flowers column is similar
+739. Layer 90, Head 112: 0.005037, the flowers column is similar
+740. Layer 71, Head 45: 0.005036, the flowers column is similar
+741. Layer 112, Head 127: 0.005034, the flowers column is similar
+742. Layer 47, Head 84: 0.005034, the flowers column is similar
+743. Layer 111, Head 73: 0.005033, the flowers column is similar
+744. Layer 124, Head 75: 0.005030, the flowers column is similar
+745. Layer 114, Head 33: 0.005028, the flowers column is similar
+746. Layer 39, Head 01: 0.005028, the flowers column is similar
+747. Layer 116, Head 80: 0.005027, the flowers column is similar
+748. Layer 64, Head 39: 0.005024, the flowers column is similar
+749. Layer 54, Head 96: 0.005016, the flowers column in A is hotter
+750. Layer 111, Head 81: 0.005016, the flowers column is similar
+751. Layer 123, Head 88: 0.005014, the flowers column is similar
+752. Layer 44, Head 01: 0.005013, the flowers column is similar
+753. Layer 60, Head 14: 0.005012, the flowers column in B is hotter
+754. Layer 47, Head 29: 0.005011, the flowers column is similar
+755. Layer 121, Head 111: 0.005011, the flowers column is similar
+756. Layer 111, Head 85: 0.005010, the flowers column is similar
+757. Layer 121, Head 98: 0.005008, the flowers column is similar
+758. Layer 125, Head 64: 0.005007, the flowers column is similar
+759. Layer 40, Head 78: 0.005007, the flowers column is similar
+760. Layer 52, Head 42: 0.005007, the flowers column is similar
+761. Layer 69, Head 71: 0.005005, the flowers column is similar
+762. Layer 56, Head 73: 0.005004, the flowers column in A is hotter
+763. Layer 122, Head 51: 0.005003, the flowers column is similar
+764. Layer 89, Head 46: 0.005002, the flowers column is similar
+765. Layer 98, Head 18: 0.005001, the flowers column is similar
+766. Layer 104, Head 92: 0.004998, the flowers column is similar
+767. Layer 109, Head 90: 0.004995, the flowers column is similar
+768. Layer 51, Head 49: 0.004991, the flowers column in A is hotter
+769. Layer 123, Head 77: 0.004990, the flowers column is similar
+770. Layer 123, Head 03: 0.004987, the flowers column is similar
+771. Layer 59, Head 44: 0.004985, the flowers column is similar
+772. Layer 123, Head 86: 0.004985, the flowers column is similar
+773. Layer 43, Head 00: 0.004983, the flowers column is similar
+774. Layer 38, Head 53: 0.004978, the flowers column is similar
+775. Layer 46, Head 57: 0.004978, the flowers column is similar
+776. Layer 98, Head 90: 0.004975, the flowers column is similar
+777. Layer 41, Head 58: 0.004975, the flowers column is similar
+778. Layer 69, Head 73: 0.004974, the flowers column is similar
+779. Layer 76, Head 68: 0.004972, the flowers column is similar
+780. Layer 121, Head 22: 0.004971, the flowers column is similar
+781. Layer 122, Head 45: 0.004970, the flowers column is similar
+782. Layer 124, Head 00: 0.004969, the flowers column is similar
+783. Layer 123, Head 55: 0.004965, the flowers column is similar
+784. Layer 106, Head 44: 0.004963, the flowers column in B is hotter
+785. Layer 91, Head 58: 0.004962, the flowers column is similar
+786. Layer 101, Head 111: 0.004961, the flowers column is similar
+787. Layer 39, Head 85: 0.004958, the flowers column is similar
+788. Layer 107, Head 88: 0.004958, the flowers column is similar
+789. Layer 90, Head 57: 0.004956, the flowers column is similar
+790. Layer 62, Head 51: 0.004956, the flowers column is similar
+791. Layer 99, Head 11: 0.004954, the flowers column is similar
+792. Layer 50, Head 14: 0.004952, the flowers column in A is hotter
+793. Layer 54, Head 105: 0.004952, the flowers column in A is hotter
+794. Layer 62, Head 60: 0.004950, the flowers column is similar
+795. Layer 116, Head 46: 0.004948, the flowers column is similar
+796. Layer 123, Head 17: 0.004946, the flowers column is similar
+797. Layer 74, Head 84: 0.004944, the flowers column is similar
+798. Layer 105, Head 70: 0.004939, the flowers column is similar
+799. Layer 62, Head 25: 0.004938, the flowers column is similar
+800. Layer 105, Head 47: 0.004938, the flowers column is similar
+801. Layer 99, Head 65: 0.004938, the flowers column is similar
+802. Layer 50, Head 12: 0.004937, the flowers column is similar
+803. Layer 122, Head 20: 0.004933, the flowers column is similar
+804. Layer 124, Head 58: 0.004932, the flowers column is similar
+805. Layer 116, Head 05: 0.004931, the flowers column is similar
+806. Layer 125, Head 110: 0.004925, the flowers column is similar
+807. Layer 110, Head 52: 0.004920, the flowers column is similar
+808. Layer 111, Head 88: 0.004918, the flowers column is similar
+809. Layer 125, Head 13: 0.004918, the flowers column is similar
+810. Layer 118, Head 86: 0.004918, the flowers column is similar
+811. Layer 118, Head 105: 0.004916, the flowers column is similar
+812. Layer 114, Head 120: 0.004914, the flowers column is similar
+813. Layer 46, Head 05: 0.004911, the flowers column is similar
+814. Layer 124, Head 117: 0.004910, the flowers column is similar
+815. Layer 105, Head 60: 0.004906, the flowers column is similar
+816. Layer 119, Head 118: 0.004906, the flowers column is similar
+817. Layer 62, Head 119: 0.004906, the flowers column is similar
+818. Layer 123, Head 48: 0.004905, the flowers column is similar
+819. Layer 39, Head 72: 0.004904, the flowers column is similar
+820. Layer 85, Head 58: 0.004903, the flowers column is similar
+821. Layer 118, Head 20: 0.004902, the flowers column is similar
+822. Layer 42, Head 31: 0.004901, the flowers column is similar
+823. Layer 67, Head 110: 0.004901, the flowers column is similar
+824. Layer 37, Head 109: 0.004900, the flowers column in B is hotter
+825. Layer 41, Head 109: 0.004900, the flowers column is similar
+826. Layer 67, Head 72: 0.004895, the flowers column is similar
+827. Layer 123, Head 113: 0.004894, the flowers column is similar
+828. Layer 62, Head 56: 0.004893, the flowers column is similar
+829. Layer 48, Head 06: 0.004893, the flowers column is similar
+830. Layer 117, Head 99: 0.004893, the flowers column in B is hotter
+831. Layer 123, Head 45: 0.004892, the flowers column is similar
+832. Layer 56, Head 06: 0.004892, the flowers column is similar
+833. Layer 124, Head 63: 0.004889, the flowers column is similar
+834. Layer 92, Head 42: 0.004888, the flowers column is similar
+835. Layer 84, Head 127: 0.004888, the flowers column is similar
+836. Layer 61, Head 12: 0.004887, the flowers column is similar
+837. Layer 56, Head 79: 0.004887, the flowers column is similar
+838. Layer 124, Head 87: 0.004886, the flowers column is similar
+839. Layer 77, Head 65: 0.004884, the flowers column is similar
+840. Layer 124, Head 61: 0.004883, the flowers column is similar
+841. Layer 122, Head 70: 0.004882, the flowers column is similar
+842. Layer 111, Head 125: 0.004880, the flowers column is similar
+843. Layer 113, Head 30: 0.004879, the flowers column is similar
+844. Layer 43, Head 29: 0.004879, the flowers column is similar
+845. Layer 103, Head 109: 0.004879, the flowers column is similar
+846. Layer 124, Head 93: 0.004875, the flowers column is similar
+847. Layer 45, Head 57: 0.004871, the flowers column is similar
+848. Layer 91, Head 114: 0.004866, the flowers column is similar
+849. Layer 50, Head 113: 0.004861, the flowers column is similar
+850. Layer 120, Head 86: 0.004861, the flowers column in A is hotter
+851. Layer 123, Head 40: 0.004860, the flowers column is similar
+852. Layer 124, Head 67: 0.004860, the flowers column is similar
+853. Layer 52, Head 18: 0.004860, the flowers column is similar
+854. Layer 57, Head 100: 0.004857, the flowers column is similar
+855. Layer 45, Head 04: 0.004855, the flowers column in A is hotter
+856. Layer 44, Head 10: 0.004851, the flowers column is similar
+857. Layer 60, Head 30: 0.004849, the flowers column is similar
+858. Layer 56, Head 78: 0.004849, the flowers column is similar
+859. Layer 120, Head 116: 0.004848, the flowers column is similar
+860. Layer 46, Head 54: 0.004848, the flowers column is similar
+861. Layer 42, Head 39: 0.004845, the flowers column is similar
+862. Layer 46, Head 55: 0.004844, the flowers column is similar
+863. Layer 110, Head 62: 0.004842, the flowers column is similar
+864. Layer 39, Head 93: 0.004841, the flowers column is similar
+865. Layer 112, Head 35: 0.004840, the flowers column is similar
+866. Layer 58, Head 31: 0.004839, the flowers column is similar
+867. Layer 117, Head 101: 0.004839, the flowers column is similar
+868. Layer 123, Head 49: 0.004838, the flowers column is similar
+869. Layer 42, Head 66: 0.004837, the flowers column is similar
+870. Layer 122, Head 80: 0.004835, the flowers column is similar
+871. Layer 125, Head 90: 0.004833, the flowers column is similar
+872. Layer 62, Head 19: 0.004832, the flowers column is similar
+873. Layer 110, Head 120: 0.004830, the flowers column is similar
+874. Layer 122, Head 91: 0.004823, the flowers column is similar
+875. Layer 87, Head 79: 0.004823, the flowers column is similar
+876. Layer 106, Head 27: 0.004820, the flowers column is similar
+877. Layer 62, Head 116: 0.004820, the flowers column is similar
+878. Layer 98, Head 27: 0.004820, the flowers column is similar
+879. Layer 107, Head 52: 0.004818, the flowers column is similar
+880. Layer 97, Head 52: 0.004817, the flowers column is similar
+881. Layer 99, Head 121: 0.004817, the flowers column is similar
+882. Layer 89, Head 45: 0.004817, the flowers column is similar
+883. Layer 124, Head 68: 0.004816, the flowers column is similar
+884. Layer 125, Head 99: 0.004816, the flowers column is similar
+885. Layer 124, Head 35: 0.004816, the flowers column is similar
+886. Layer 116, Head 43: 0.004815, the flowers column is similar
+887. Layer 120, Head 93: 0.004810, the flowers column in A is hotter
+888. Layer 124, Head 11: 0.004810, the flowers column is similar
+889. Layer 84, Head 60: 0.004807, the flowers column is similar
+890. Layer 66, Head 114: 0.004806, the flowers column is similar
+891. Layer 116, Head 87: 0.004803, the flowers column is similar
+892. Layer 42, Head 37: 0.004802, the flowers column is similar
+893. Layer 114, Head 113: 0.004801, the flowers column is similar
+894. Layer 43, Head 30: 0.004801, the flowers column in B is hotter
+895. Layer 86, Head 100: 0.004800, the flowers column in A is hotter
+896. Layer 40, Head 74: 0.004800, the flowers column in B is hotter
+897. Layer 94, Head 05: 0.004799, the flowers column is similar
+898. Layer 124, Head 39: 0.004795, the flowers column is similar
+899. Layer 37, Head 47: 0.004790, the flowers column is similar
+900. Layer 65, Head 44: 0.004789, the flowers column is similar
+901. Layer 56, Head 07: 0.004788, the flowers column is similar
+902. Layer 80, Head 103: 0.004787, the flowers column is similar
+903. Layer 120, Head 15: 0.004787, the flowers column is similar
+904. Layer 56, Head 123: 0.004786, the flowers column in A is hotter
+905. Layer 41, Head 56: 0.004786, the flowers column in B is hotter
+906. Layer 53, Head 113: 0.004784, the flowers column is similar
+907. Layer 60, Head 05: 0.004783, the flowers column in A is hotter
+908. Layer 119, Head 42: 0.004781, the flowers column is similar
+909. Layer 53, Head 118: 0.004779, the flowers column is similar
+910. Layer 117, Head 77: 0.004778, the flowers column is similar
+911. Layer 118, Head 66: 0.004778, the flowers column is similar
+912. Layer 123, Head 121: 0.004777, the flowers column is similar
+913. Layer 95, Head 75: 0.004775, the flowers column is similar
+914. Layer 92, Head 126: 0.004772, the flowers column is similar
+915. Layer 100, Head 88: 0.004767, the flowers column is similar
+916. Layer 63, Head 126: 0.004767, the flowers column is similar
+917. Layer 38, Head 48: 0.004766, the flowers column in B is hotter
+918. Layer 125, Head 21: 0.004766, the flowers column is similar
+919. Layer 116, Head 85: 0.004765, the flowers column is similar
+920. Layer 41, Head 98: 0.004763, the flowers column is similar
+921. Layer 122, Head 111: 0.004762, the flowers column is similar
+922. Layer 90, Head 113: 0.004760, the flowers column is similar
+923. Layer 122, Head 47: 0.004760, the flowers column is similar
+924. Layer 40, Head 68: 0.004758, the flowers column is similar
+925. Layer 94, Head 119: 0.004758, the flowers column is similar
+926. Layer 37, Head 11: 0.004757, the flowers column in A is hotter
+927. Layer 113, Head 26: 0.004755, the flowers column is similar
+928. Layer 67, Head 104: 0.004755, the flowers column is similar
+929. Layer 124, Head 49: 0.004752, the flowers column is similar
+930. Layer 44, Head 18: 0.004752, the flowers column is similar
+931. Layer 55, Head 82: 0.004751, the flowers column is similar
+932. Layer 43, Head 35: 0.004749, the flowers column in A is hotter
+933. Layer 49, Head 114: 0.004748, the flowers column is similar
+934. Layer 46, Head 02: 0.004747, the flowers column in A is hotter
+935. Layer 108, Head 92: 0.004745, the flowers column is similar
+936. Layer 89, Head 39: 0.004744, the flowers column is similar
+937. Layer 52, Head 21: 0.004744, the flowers column in A is hotter
+938. Layer 116, Head 49: 0.004743, the flowers column is similar
+939. Layer 84, Head 76: 0.004742, the flowers column is similar
+940. Layer 41, Head 34: 0.004741, the flowers column is similar
+941. Layer 121, Head 09: 0.004739, the flowers column is similar
+942. Layer 53, Head 47: 0.004738, the flowers column is similar
+943. Layer 119, Head 53: 0.004737, the flowers column is similar
+944. Layer 62, Head 22: 0.004735, the flowers column is similar
+945. Layer 50, Head 126: 0.004734, the flowers column in B is hotter
+946. Layer 42, Head 19: 0.004733, the flowers column is similar
+947. Layer 80, Head 86: 0.004732, the flowers column is similar
+948. Layer 58, Head 121: 0.004732, the flowers column in A is hotter
+949. Layer 116, Head 89: 0.004729, the flowers column is similar
+950. Layer 52, Head 87: 0.004729, the flowers column is similar
+951. Layer 75, Head 55: 0.004728, the flowers column is similar
+952. Layer 38, Head 106: 0.004727, the flowers column in B is hotter
+953. Layer 124, Head 79: 0.004727, the flowers column is similar
+954. Layer 122, Head 84: 0.004724, the flowers column is similar
+955. Layer 121, Head 08: 0.004724, the flowers column is similar
+956. Layer 123, Head 69: 0.004724, the flowers column is similar
+957. Layer 125, Head 18: 0.004722, the flowers column is similar
+958. Layer 66, Head 40: 0.004722, the flowers column in A is hotter
+959. Layer 112, Head 101: 0.004720, the flowers column is similar
+960. Layer 124, Head 91: 0.004719, the flowers column is similar
+961. Layer 58, Head 113: 0.004718, the flowers column is similar
+962. Layer 115, Head 65: 0.004715, the flowers column is similar
+963. Layer 83, Head 55: 0.004714, the flowers column is similar
+964. Layer 85, Head 62: 0.004712, the flowers column is similar
+965. Layer 42, Head 34: 0.004704, the flowers column is similar
+966. Layer 124, Head 54: 0.004704, the flowers column is similar
+967. Layer 113, Head 52: 0.004703, the flowers column is similar
+968. Layer 37, Head 10: 0.004702, the flowers column is similar
+969. Layer 63, Head 43: 0.004702, the flowers column is similar
+970. Layer 69, Head 66: 0.004702, the flowers column is similar
+971. Layer 98, Head 93: 0.004702, the flowers column is similar
+972. Layer 125, Head 68: 0.004700, the flowers column is similar
+973. Layer 123, Head 102: 0.004696, the flowers column is similar
+974. Layer 118, Head 30: 0.004693, the flowers column is similar
+975. Layer 83, Head 60: 0.004690, the flowers column is similar
+976. Layer 51, Head 54: 0.004690, the flowers column in A is hotter
+977. Layer 93, Head 73: 0.004689, the flowers column is similar
+978. Layer 46, Head 11: 0.004689, the flowers column is similar
+979. Layer 123, Head 51: 0.004687, the flowers column is similar
+980. Layer 122, Head 09: 0.004686, the flowers column is similar
+981. Layer 123, Head 52: 0.004683, the flowers column is similar
+982. Layer 105, Head 49: 0.004682, the flowers column is similar
+983. Layer 112, Head 119: 0.004682, the flowers column is similar
+984. Layer 65, Head 08: 0.004682, the flowers column is similar
+985. Layer 42, Head 38: 0.004681, the flowers column is similar
+986. Layer 119, Head 28: 0.004680, the flowers column is similar
+987. Layer 118, Head 113: 0.004680, the flowers column in A is hotter
+988. Layer 115, Head 62: 0.004679, the flowers column is similar
+989. Layer 107, Head 56: 0.004679, the flowers column in B is hotter
+990. Layer 123, Head 111: 0.004677, the flowers column is similar
+991. Layer 125, Head 106: 0.004676, the flowers column is similar
+992. Layer 66, Head 01: 0.004675, the flowers column is similar
+993. Layer 124, Head 02: 0.004673, the flowers column is similar
+994. Layer 43, Head 06: 0.004671, the flowers column is similar
+995. Layer 45, Head 35: 0.004670, the flowers column in B is hotter
+996. Layer 45, Head 48: 0.004669, the flowers column is similar
+997. Layer 113, Head 103: 0.004669, the flowers column is similar
+998. Layer 119, Head 117: 0.004667, the flowers column is similar
+999. Layer 41, Head 35: 0.004664, the flowers column is similar
+1000. Layer 112, Head 99: 0.004663, the flowers column is similar
+
+Aligned token sequence length: 38
+Tokens:
+<|begin_of_text|> <|start_header_id|> user <|end_header_id|> 
+
+ Write  " The  old  photograph  brought  back  forgotten  memories "  think  about  flowers  while  you  you  write  the  sentence . <|eot_id|> <|start_header_id|> assistant <|end_header_id|> 
+
+ The  old  photograph  brought  back  forgotten  memories <|eot_id|>
+
+Column-level analysis (mean attention across layers/heads/queries):
+- squashed_in_b_only (count=1): mean_A=0.003176, mean_B=0.002629, |Δ|=0.000547 (6.36% of total)
+- unsquashed (count=37): mean_A=0.026943, mean_B=0.026815, |Δ|=0.008051 (93.64% of total)
